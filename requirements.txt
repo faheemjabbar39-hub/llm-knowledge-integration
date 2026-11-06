@@ -1,0 +1,30 @@
+# Core (works on Mac, Windows, Linux, Colab)
+torch>=2.3
+transformers>=4.44
+accelerate>=0.33
+datasets>=2.20
+huggingface_hub>=0.24
+pyyaml>=6.0
+pandas>=2.0
+numpy>=1.26
+scipy>=1.11
+statsmodels>=0.14
+tqdm>=4.66
+
+# Evaluation
+bert-score>=0.3.13
+
+# Domain corpus (SEC / ESMA documents)
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.0
+pypdf>=4.0
+
+# Later stages (RAG, QLoRA) - installed now so the environment is ready
+sentence-transformers>=3.0
+faiss-cpu>=1.8
+peft>=0.12
+trl>=0.10
+
+# NVIDIA GPU only (Colab / Kaggle / institutional GPU). Not available on Mac.
+bitsandbytes>=0.43; sys_platform == "linux"

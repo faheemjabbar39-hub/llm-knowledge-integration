@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+.DS_Store
+
+# Data and outputs are rebuilt by the scripts, not committed
+data/raw/sec/*
+data/raw/esma/*
+data/processed/*
+!data/**/.gitkeep
+results/raw/**
+!results/raw/.gitkeep
+adapters/
+indexes/
+cache/
