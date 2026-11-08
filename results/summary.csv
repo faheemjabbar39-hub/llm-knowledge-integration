@@ -1,0 +1,5 @@
+model,condition,dataset,n,accuracy,contains,hallucination_rate,latency_p50_ms,latency_p95_ms,latency_p99_ms,mean_latency_ms,peak_gpu_gb,cost_per_1k_usd
+llama8b,base,hotpotqa,500,0.162,0.2,,1351.19,1718.4685,2535.7474,1376.3835,5.897,0.1338
+llama8b,base,mmlu_fin,500,0.578,0.578,,1172.13,1570.4155,1911.6312,1284.7114,5.897,0.1249
+llama8b,base,nq,500,0.196,0.272,,1330.83,2214.9615,4584.6816,1457.3151,5.897,0.1417
+llama8b,base,truthfulqa,500,0.54,0.54,0.46,1163.2,1555.879,1935.3097,1259.1745,5.897,0.1224

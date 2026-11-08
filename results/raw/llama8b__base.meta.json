@@ -1,0 +1,11 @@
+{
+  "model": "llama8b",
+  "hf_id": "meta-llama/Llama-3.1-8B-Instruct",
+  "strategy": "base",
+  "tag": "",
+  "device": "cuda",
+  "quant": "nf4",
+  "n_items_this_run": 1920,
+  "wall_clock_s": 2592.3,
+  "peak_gpu_gb": 5.897
+}

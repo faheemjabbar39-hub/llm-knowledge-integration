@@ -75,7 +75,9 @@ python scripts/05_run_eval.py --model llama8b --strategy base --limit 20 # 2-min
 python scripts/05_run_eval.py --model llama8b --strategy base            # full baseline (~1 h on a T4)
 python scripts/05_run_eval.py --model mistral7b --strategy base
 python scripts/06_analyze.py --gpu-usd-per-hour 0.35                     # summary table
+python scripts/08_plot_results.py                                        # charts -> results/figures/
 ```
+The last notebook cell uploads `results/` (CSVs, summary, charts) to this GitHub repo.
 
 > **Mac users:** 4-bit loading needs an NVIDIA GPU. On a Mac set `load_in_4bit: false` in
 > `configs/experiment.yaml` (runs in float16, ~16 GB for the 8B model). Use Mac runs for

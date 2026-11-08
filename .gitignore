@@ -11,8 +11,6 @@ data/raw/sec/*
 data/raw/esma/*
 data/processed/*
 !data/**/.gitkeep
-results/raw/**
-!results/raw/.gitkeep
 adapters/
 indexes/
 cache/
