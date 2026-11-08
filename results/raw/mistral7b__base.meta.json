@@ -1,0 +1,11 @@
+{
+  "model": "mistral7b",
+  "hf_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "strategy": "base",
+  "tag": "",
+  "device": "cuda",
+  "quant": "nf4",
+  "n_items_this_run": 2000,
+  "wall_clock_s": 4396.4,
+  "peak_gpu_gb": 4.335
+}
