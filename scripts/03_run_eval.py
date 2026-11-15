@@ -180,6 +180,10 @@ def main(model_and_tok=None):
     out_dir.mkdir(parents=True, exist_ok=True)
 
     if model_and_tok is None:
+        if cfg["load_in_4bit"] and not torch.cuda.is_available():
+            raise SystemExit("No NVIDIA GPU found, so the model cannot be loaded in 4-bit.\n"
+                             "In Colab: Runtime -> Change runtime type -> T4 GPU -> Save. The session restarts,\n"
+                             "so run Setup A, B, C and Step 1 again, then this cell.")
         model, tok, device = load_model(cfg["models"][args.model], cfg["load_in_4bit"], args.adapter)
     else:                                           # used by the tests
         model, tok, device = model_and_tok
