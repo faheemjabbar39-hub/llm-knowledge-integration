@@ -7,13 +7,17 @@ from pathlib import Path
 
 import yaml
 
+import os
+
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "data"
-PROCESSED = DATA / "processed"
-RESULTS = ROOT / "results"
+# The KIS_* environment variables exist for the tests; normal runs use the repo folders.
+PROCESSED = Path(os.environ.get("KIS_PROCESSED", DATA / "processed"))
+RESULTS = Path(os.environ.get("KIS_RESULTS", ROOT / "results"))
 
 
-def load_config(path: str | Path = ROOT / "configs" / "experiment.yaml") -> dict:
+def load_config(path: str | Path | None = None) -> dict:
+    path = path or os.environ.get("KIS_CONFIG") or ROOT / "configs" / "experiment.yaml"
     with open(path, encoding="utf-8") as f:
         return yaml.safe_load(f)
 

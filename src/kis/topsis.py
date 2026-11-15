@@ -7,8 +7,7 @@ import pandas as pd
 # +1 = higher is better (benefit), -1 = lower is better (cost)
 DIRECTIONS = {
     "accuracy": +1,
-    "bertscore": +1,
-    "judge_score": +1,
+    "f1": +1,
     "hallucination_rate": -1,
     "latency_p50_ms": -1,
     "peak_gpu_gb": -1,
@@ -17,10 +16,10 @@ DIRECTIONS = {
 
 # Example deployment profiles. Weights must sum to 1.
 PROFILES = {
-    "compliance":  {"accuracy": .30, "hallucination_rate": .30, "judge_score": .10,
-                    "bertscore": .05, "latency_p50_ms": .10, "peak_gpu_gb": .05, "cost_per_1k_usd": .10},
-    "high_volume": {"accuracy": .15, "hallucination_rate": .15, "judge_score": .05,
-                    "bertscore": .05, "latency_p50_ms": .25, "peak_gpu_gb": .10, "cost_per_1k_usd": .25},
+    "compliance":  {"accuracy": .30, "hallucination_rate": .30, "f1": .10,
+                    "latency_p50_ms": .10, "peak_gpu_gb": .05, "cost_per_1k_usd": .15},
+    "high_volume": {"accuracy": .20, "hallucination_rate": .15, "f1": .05,
+                    "latency_p50_ms": .25, "peak_gpu_gb": .10, "cost_per_1k_usd": .25},
 }
 
 

@@ -1,0 +1,46 @@
+# Single source of truth for the experiment. Every script reads this file,
+# so all 12 conditions share the same settings (the "controlled" part of the study).
+
+seed: 42
+
+models:
+  llama8b:  meta-llama/Llama-3.1-8B-Instruct
+  llama70b: meta-llama/Llama-3.1-70B-Instruct
+  mistral7b: mistralai/Mistral-7B-Instruct-v0.3
+
+# Load every model in 4-bit (NF4) for ALL strategies, so quantisation is not
+# confounded with QLoRA. Needs an NVIDIA GPU. Set to false on a Mac (runs fp16).
+load_in_4bit: true
+
+generation:
+  temperature: 0.0        # greedy decoding
+  max_new_tokens: 64
+
+# How many items per benchmark go into each split.
+# Train and test come from DIFFERENT official splits, so they never overlap.
+splits:
+  test_per_benchmark: 500
+  train_per_benchmark: 1000
+
+benchmarks:
+  hotpotqa:   {hf_id: hotpot_qa, config: distractor, train_split: train, test_split: validation}
+  nq:         {hf_id: google-research-datasets/nq_open, config: null, train_split: train, test_split: validation}
+  mmlu_fin:
+    hf_id: cais/mmlu
+    subjects: [professional_accounting, business_ethics, high_school_microeconomics]
+    train_split: [dev, validation]
+    test_split: test
+  truthfulqa: {hf_id: truthfulqa/truthful_qa, config: multiple_choice, test_split: validation}  # test only, never trained on
+
+domain:
+  # SEC EDGAR requires a User-Agent with your name and email. Fill this in before running.
+  sec_user_agent: "YOUR NAME your.email@example.com"
+  sec_tickers: [BLK, TROW, BEN, IVZ, STT, BK, AMP, NTRS, SEIC, JHG]   # asset managers
+  sec_form: 10-K
+  filings_per_ticker: 1
+  chunk_words: 350
+  chunk_overlap_words: 50
+  # Documents (not questions) are split into train/test, so no test passage is ever seen in training.
+  test_doc_fraction: 0.3
+  target_test_items: 200
+  qa_per_chunk: 1

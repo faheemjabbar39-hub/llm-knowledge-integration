@@ -1,7 +1,7 @@
 """Charts of every condition run so far. Rerun after each new model or strategy and the
 charts grow automatically (one panel per model, one colour per strategy).
 
-Run:    python scripts/08_plot_results.py      (after scripts/06_analyze.py)
+Run:    python scripts/06_plot_results.py      (after scripts/05_analyze.py)
 Output: results/figures/*.png
 """
 from __future__ import annotations
@@ -19,11 +19,9 @@ from kis.common import RESULTS
 STRATEGY_ORDER = ["base", "qlora", "rag", "cag"]
 COLORS = {"base": "#2a78d6", "qlora": "#eb6834", "rag": "#1baf7a", "cag": "#eda100"}
 LABELS = {"base": "Base", "qlora": "QLoRA", "rag": "RAG", "cag": "CAG"}
-MODEL_ORDER = ["llama8b", "mistral7b", "llama70b"]
-MODEL_LABELS = {"llama8b": "Llama-3.1-8B", "mistral7b": "Mistral-7B", "llama70b": "Llama-3.1-70B"}
-MODEL_MARKERS = {"llama8b": "o", "mistral7b": "s", "llama70b": "^"}
-DATASET_LABELS = {"mmlu_fin": "MMLU finance", "truthfulqa": "TruthfulQA", "nq": "Natural Qs",
-                  "hotpotqa": "HotpotQA", "domain": "SEC/ESMA"}
+MODEL_ORDER = ["llama8b", "mistral7b", "qwen7b"]
+MODEL_LABELS = {"llama8b": "Llama-3.1-8B", "mistral7b": "Mistral-7B", "qwen7b": "Qwen2.5-7B"}
+MODEL_MARKERS = {"llama8b": "o", "mistral7b": "s", "qwen7b": "^"}
 
 INK, INK2, MUTED, GRID, AXIS, SURFACE = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7", "#fcfcfb"
 plt.rcParams.update({
@@ -33,10 +31,6 @@ plt.rcParams.update({
     "axes.spines.top": False, "axes.spines.right": False, "axes.grid": True, "axes.grid.axis": "y",
     "grid.color": GRID, "grid.linewidth": 0.6, "axes.axisbelow": True,
 })
-
-
-def _base_strategy(cond: str) -> str:
-    return cond.split("[")[0]
 
 
 def _ordered(values, order):
@@ -52,60 +46,66 @@ def _bar_label(ax, bars, fmt):
 
 
 def _legend(fig, strategies):
+    """Legend on its own line under the title, so it never collides with the title on narrow charts."""
     handles = [plt.Rectangle((0, 0), 1, 1, color=COLORS.get(s, MUTED)) for s in strategies]
-    fig.legend(handles, [LABELS.get(s, s) for s in strategies], loc="upper right", frameon=False,
-               ncol=len(strategies), title="Strategy", title_fontsize=9)
+    fig.legend(handles, [LABELS.get(s, s) for s in strategies], loc="upper left", frameon=False,
+               ncol=len(strategies), bbox_to_anchor=(0.005, 1 - 0.42 / fig.get_figheight()),
+               handlelength=1.2, columnspacing=1.4)
 
 
-def grouped_by_dataset(s: pd.DataFrame, metric: str, title: str, ylabel: str, fname: str,
-                       datasets=None, pct=True):
-    s = s.copy()
-    s["strategy"] = s["condition"].map(_base_strategy)
-    if datasets:
-        s = s[s["dataset"].isin(datasets)]
-    s = s.dropna(subset=[metric])
-    if s.empty:
+def grouped(long: pd.DataFrame, group_order: list[str], title: str, ylabel: str, fname: str, pct=True):
+    """Bars per strategy for each group on the x axis; one panel per model.
+    `long` has columns model, strategy, group, value (value is a share 0-1, or milliseconds)."""
+    long = long.dropna(subset=["value"])
+    if long.empty:
         return None
-    models = _ordered(s["model"].unique(), MODEL_ORDER)
-    strategies = _ordered(s["strategy"].unique(), STRATEGY_ORDER)
-    dsets = _ordered(s["dataset"].unique(), list(DATASET_LABELS))
-    # one row per model (small multiples stacked), width grows with the number of bars
-    n_bars = len(dsets) * len(strategies)
+    models = _ordered(long["model"].unique(), MODEL_ORDER)
+    strategies = _ordered(long["strategy"].unique(), STRATEGY_ORDER)
+    groups = [g for g in group_order if g in set(long["group"])]
+    scale = 100 if pct else 0.001
+    n_bars = len(groups) * len(strategies)
     fig, axes = plt.subplots(len(models), 1, figsize=(max(6.5, 0.42 * n_bars + 2), 0.6 + 3.4 * len(models)),
                              sharey=True, squeeze=False)
     axes = axes.T
     width = 0.8 / len(strategies)
-    ymax = s[metric].max() * (100 if pct else 0.001)
+    ymax = long["value"].max() * scale
     for ax, m in zip(axes[0], models):
-        x = np.arange(len(dsets))
+        x = np.arange(len(groups))
         for i, st in enumerate(strategies):
-            vals = [s[(s.model == m) & (s.strategy == st) & (s.dataset == d)][metric].mean() for d in dsets]
-            vals = np.array(vals, dtype=float) * (100 if pct else 0.001)
+            vals = [long[(long.model == m) & (long.strategy == st) & (long.group == g)]["value"].mean()
+                    for g in groups]
+            vals = np.array(vals, dtype=float) * scale
             bars = ax.bar(x + (i - (len(strategies) - 1) / 2) * width, vals, width * 0.92,
                           color=COLORS.get(st, MUTED), label=LABELS.get(st, st))
             _bar_label(ax, bars, (lambda v: f"{v:.0f}") if pct else (lambda v: f"{v:.1f}s"))
-        ax.set_xticks(x, [DATASET_LABELS.get(d, d) for d in dsets])
+        ax.set_xticks(x, groups)
         ax.set_title(MODEL_LABELS.get(m, m), loc="left")
         ax.set_ylim(0, ymax * 1.18 if ymax else 1)
         ax.tick_params(axis="x", length=0)
-    for ax in axes[0]:
         ax.set_ylabel(ylabel)
-    fig.suptitle(title, x=0.01, ha="left", fontsize=12, fontweight="bold")
+    fig.suptitle(title, x=0.012, y=1 - 0.12 / fig.get_figheight(), ha="left", va="top", fontsize=12,
+                 fontweight="bold")
     _legend(fig, strategies)
-    fig.tight_layout(rect=(0, 0, 1, 1 - 0.75 / fig.get_figheight()))
+    fig.tight_layout(rect=(0, 0, 1, 1 - 0.8 / fig.get_figheight()))
     out = RESULTS / "figures" / fname
     fig.savefig(out, dpi=160)
     plt.close(fig)
     return out
 
 
+def _long(df: pd.DataFrame, columns: dict[str, str]) -> pd.DataFrame:
+    """Wide summary -> long form: one row per (model, strategy, group)."""
+    parts = [df[["model", "strategy"]].assign(group=label, value=df[col]) for col, label in columns.items()
+             if col in df]
+    return pd.concat(parts, ignore_index=True) if parts else pd.DataFrame(columns=["model", "strategy", "group", "value"])
+
+
 def tradeoff(s: pd.DataFrame, fname="accuracy_vs_cost.png"):
     if "cost_per_1k_usd" not in s:
         return None
-    s = s.copy()
-    s["strategy"] = s["condition"].map(_base_strategy)
-    agg = s.groupby(["model", "condition", "strategy"], as_index=False).agg(
-        accuracy=("accuracy", "mean"), cost=("cost_per_1k_usd", "mean"))
+    agg = s.rename(columns={"cost_per_1k_usd": "cost"}).dropna(subset=["accuracy", "cost"])
+    if agg.empty:
+        return None
     fig, ax = plt.subplots(figsize=(7.2, 4.6))
     sparse = len(agg) <= 4
     for r in agg.itertuples():
@@ -125,7 +125,7 @@ def tradeoff(s: pd.DataFrame, fname="accuracy_vs_cost.png"):
     ax.legend(h2, [MODEL_LABELS.get(m, m) for m in models], title="Model (shape)",
               loc="upper left", bbox_to_anchor=(1.01, 0.5), frameon=False, fontsize=9, title_fontsize=9)
     ax.set_xlabel("Cost per 1,000 questions (US$)")
-    ax.set_ylabel("Mean accuracy across test sets (%)")
+    ax.set_ylabel("Accuracy (%)")
     ax.grid(axis="x", color=GRID, linewidth=0.6)
     ax.set_xlim(0, agg["cost"].max() * 1.6)
     ax.set_ylim(0, max(agg["accuracy"].max() * 100 * 1.25, 10))
@@ -140,16 +140,31 @@ def tradeoff(s: pd.DataFrame, fname="accuracy_vs_cost.png"):
 def main():
     path = RESULTS / "summary.csv"
     if not path.exists():
-        raise SystemExit("results/summary.csv not found - run scripts/06_analyze.py first.")
+        raise SystemExit("results/summary.csv not found - run scripts/05_analyze.py first.")
     s = pd.read_csv(path)
+    s = s[~s["condition"].str.contains(r"\[")].copy()      # the four main conditions only
+    s["strategy"] = s["condition"]
     (RESULTS / "figures").mkdir(parents=True, exist_ok=True)
+
+    t = pd.read_csv(RESULTS / "summary_by_type.csv")
+    t = t[(t["breakdown"] == "answer_type") & ~t["condition"].str.contains(r"\[")]
+    names = {"span": "Text or value\nfrom the report", "multi-span": "Several values",
+             "arithmetic": "Calculation", "count": "Counting"}
+    by_type = pd.DataFrame({"model": t["model"], "strategy": t["condition"],
+                            "group": t["group"].map(names), "value": t["accuracy"]})
+    overall = s[["model", "strategy"]].assign(group="All questions", value=s["accuracy"])
+
     made = [
-        grouped_by_dataset(s, "accuracy", "Accuracy (exact match) by test set",
-                           "Correct answers (%)", "accuracy.png"),
-        grouped_by_dataset(s, "hallucination_rate", "Hallucination rate on TruthfulQA (lower is better)",
-                           "Answers repeating a falsehood (%)", "hallucination.png", datasets=["truthfulqa"]),
-        grouped_by_dataset(s, "latency_p50_ms", "Typical response time (median, lower is better)",
-                           "Seconds per answer", "latency.png", pct=False),
+        grouped(pd.concat([overall, by_type], ignore_index=True), ["All questions"] + list(names.values()),
+                "Accuracy by kind of answer (strict marking)", "Correct answers (%)", "accuracy.png"),
+        grouped(_long(s, {"hallucination_rate": "Wrong answer given\n(hallucination)",
+                          "abstain_rate": "Said \"I don't know\""}),
+                ["Wrong answer given\n(hallucination)", "Said \"I don't know\""],
+                "Wrong answers and refusals (lower hallucination is better)", "Share of questions (%)",
+                "hallucination.png"),
+        grouped(_long(s, {"latency_p50_ms": "Typical answer\n(median)", "latency_p95_ms": "Slow answer\n(95th percentile)"}),
+                ["Typical answer\n(median)", "Slow answer\n(95th percentile)"],
+                "Response time (lower is better)", "Seconds per answer", "latency.png", pct=False),
         tradeoff(s),
     ]
     for m in made:

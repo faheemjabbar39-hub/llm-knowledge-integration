@@ -1,46 +1,56 @@
-# Single source of truth for the experiment. Every script reads this file,
-# so all 12 conditions share the same settings (the "controlled" part of the study).
+# Single source of truth for the main study. Every script reads this file,
+# so all 12 conditions (4 strategies x 3 models) share the same settings.
 
 seed: 42
 
+# Three open models of the same size class from three different makers.
 models:
-  llama8b:  meta-llama/Llama-3.1-8B-Instruct
-  llama70b: meta-llama/Llama-3.1-70B-Instruct
+  llama8b:   meta-llama/Llama-3.1-8B-Instruct
   mistral7b: mistralai/Mistral-7B-Instruct-v0.3
+  qwen7b:    Qwen/Qwen2.5-7B-Instruct
 
-# Load every model in 4-bit (NF4) for ALL strategies, so quantisation is not
-# confounded with QLoRA. Needs an NVIDIA GPU. Set to false on a Mac (runs fp16).
+# Every model is loaded in 4-bit (NF4) for ALL strategies, so quantisation is held
+# constant. Needs an NVIDIA GPU. Set to false on a Mac (development only).
 load_in_4bit: true
 
 generation:
   temperature: 0.0        # greedy decoding
-  max_new_tokens: 64
+  max_new_tokens: 96      # room for one calculation line plus the answer
 
-# How many items per benchmark go into each split.
-# Train and test come from DIFFERENT official splits, so they never overlap.
-splits:
-  test_per_benchmark: 500
-  train_per_benchmark: 1000
+# TAT-QA (Zhu et al., ACL 2021): questions over tables + text from real financial reports.
+# Official splits are used: train -> QLoRA, dev -> choosing settings, test -> final results.
+tatqa:
+  base_url: https://raw.githubusercontent.com/NExTplusplus/TAT-QA/master/dataset_raw
+  files:
+    train: tatqa_dataset_train.json
+    dev: tatqa_dataset_dev.json
+    test: tatqa_dataset_test_gold.json
+  # A "context" is one report extract (a table plus its paragraphs) with about 6 questions.
+  test_contexts: 84       # 84 x 6 = 504 test questions
+  dev_contexts: 56        # 336 dev questions for the retrieval check and for tuning
+  train_contexts: 200     # 1,200 training questions for QLoRA
+  # The knowledge base is split into groups small enough to preload (CAG) on a 16 GB GPU
+  # and inside every model's context window. RAG searches the same group, so both
+  # strategies see exactly the same knowledge.
+  block_size: 28
 
-benchmarks:
-  hotpotqa:   {hf_id: hotpot_qa, config: distractor, train_split: train, test_split: validation}
-  nq:         {hf_id: google-research-datasets/nq_open, config: null, train_split: train, test_split: validation}
-  mmlu_fin:
-    hf_id: cais/mmlu
-    subjects: [professional_accounting, business_ethics, high_school_microeconomics]
-    train_split: [dev, validation]
-    test_split: test
-  truthfulqa: {hf_id: truthfulqa/truthful_qa, config: multiple_choice, test_split: validation}  # test only, never trained on
+rag:
+  retriever: dense                                    # dense | tfidf
+  embedder: sentence-transformers/all-mpnet-base-v2
+  top_k: 3                                            # report extracts given to the model
 
-domain:
-  # SEC EDGAR requires a User-Agent with your name and email. Fill this in before running.
-  sec_user_agent: "YOUR NAME your.email@example.com"
-  sec_tickers: [BLK, TROW, BEN, IVZ, STT, BK, AMP, NTRS, SEIC, JHG]   # asset managers
-  sec_form: 10-K
-  filings_per_ticker: 1
-  chunk_words: 350
-  chunk_overlap_words: 50
-  # Documents (not questions) are split into train/test, so no test passage is ever seen in training.
-  test_doc_fraction: 0.3
-  target_test_items: 200
-  qa_per_chunk: 1
+cag:
+  max_prefix_tokens: 30000    # safety limit; a block above this stops with a clear message
+  prefill_chunk_tokens: 1024  # the cache is built in pieces to keep GPU memory low
+
+qlora:
+  rank: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, v_proj]
+  epochs: 1
+  learning_rate: 0.0002
+  max_len: 3072
+
+# Cost model: GPU rental price used for "cost per 1,000 questions".
+gpu_usd_per_hour: 0.35

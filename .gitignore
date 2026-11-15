@@ -1,16 +1,15 @@
 __pycache__/
 *.pyc
+*.egg-info/
+.pytest_cache/
 .venv/
 venv/
 .env
 .ipynb_checkpoints/
 .DS_Store
 
-# Data and outputs are rebuilt by the scripts, not committed
-data/raw/sec/*
-data/raw/esma/*
-data/processed/*
-!data/**/.gitkeep
-adapters/
-indexes/
-cache/
+# Raw downloads are fetched again by scripts/01_prepare_tatqa.py
+data/raw/
+# Processed TAT-QA files ARE committed, so everyone tests on exactly the same questions.
+# Results (results/) and trained adapters (adapters/) are committed too, so a new Colab
+# session continues where the last one stopped.
