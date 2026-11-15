@@ -15,6 +15,7 @@ import json
 
 import torch
 
+from kis.autosave import autosave
 from kis.common import PROCESSED, ROOT, load_config, read_jsonl, set_seed
 from kis.qlora import add_lora, build_examples, train
 
@@ -70,6 +71,7 @@ def main():
     (out / "train_meta.json").write_text(json.dumps(meta, indent=2))
     print(json.dumps(meta, indent=2))
     print(f"adapter saved to {out}")
+    autosave(f"QLoRA adapter {out.name} trained")
 
 
 if __name__ == "__main__":

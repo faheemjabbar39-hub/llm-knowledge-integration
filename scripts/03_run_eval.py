@@ -26,6 +26,7 @@ from pathlib import Path
 import torch
 from tqdm import tqdm
 
+from kis.autosave import autosave
 from kis.common import PROCESSED, RESULTS, ROOT, load_config, read_jsonl, set_seed
 from kis.models import (PrefixCache, encode_prompt, generate, load_model, peak_memory_gb,
                         reset_peak_memory)
@@ -77,7 +78,7 @@ def run_condition(args, cfg, strategy, items, kb, retriever, model, tok, device,
         w = csv.DictWriter(f, fieldnames=FIELDS)
         if new_file:
             w.writeheader()
-        for it in tqdm(todo, desc=stem):
+        for n_done, it in enumerate(tqdm(todo, desc=stem), 1):
             retrieved, retrieval_ms, hit, prefix_cache = [], 0.0, None, None
             suffix = question_suffix(it)
             if use_docs:
@@ -122,6 +123,8 @@ def run_condition(args, cfg, strategy, items, kb, retriever, model, tok, device,
                 "output_tokens": g.output_tokens, "device": device, "quant": quant,
             })
             f.flush()
+            if n_done % 25 == 0:          # every 25 questions (and at most every 5 minutes): save to GitHub
+                autosave(f"{stem} {len(done) + n_done}/{len(items)}", min_interval_s=300)
 
     # one-off preparation cost, reported separately from the per-question cost
     setup = {}
@@ -147,6 +150,7 @@ def run_condition(args, cfg, strategy, items, kb, retriever, model, tok, device,
             if device == "cuda" else None, "setup": setup}
     meta_path.write_text(json.dumps(meta, indent=2))
     print(json.dumps(meta, indent=2))
+    autosave(f"{stem} finished")
 
 
 def main(model_and_tok=None):
