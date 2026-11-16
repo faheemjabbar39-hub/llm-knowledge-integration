@@ -1,0 +1,19 @@
+{
+  "model": "mistral7b",
+  "hf_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "strategy": "rag",
+  "tag": "",
+  "split": "test",
+  "device": "cuda",
+  "quant": "nf4",
+  "uses_documents": true,
+  "top_k": 3,
+  "retriever": "dense",
+  "adapter": null,
+  "n_items_this_run": 504,
+  "wall_clock_s": 10951.6,
+  "peak_gpu_gb": 10.006,
+  "setup": {
+    "index_build_s": 11.85
+  }
+}

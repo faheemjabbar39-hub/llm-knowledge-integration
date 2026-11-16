@@ -1,0 +1,47 @@
+{
+  "split": "dev",
+  "n_questions": 336,
+  "block_size": 28,
+  "retrieval": {
+    "keyword search (TF-IDF)": {
+      "hit@1": 0.795,
+      "hit@3": 0.884,
+      "hit@5": 0.905,
+      "hit@3 (table questions)": 0.87,
+      "hit@3 (table-text questions)": 0.87,
+      "hit@3 (text questions)": 0.94
+    },
+    "dense search (sentence-transformers/all-mpnet-base-v2)": {
+      "hit@1": 0.634,
+      "hit@3": 0.827,
+      "hit@5": 0.881,
+      "hit@3 (table questions)": 0.815,
+      "hit@3 (table-text questions)": 0.797,
+      "hit@3 (text questions)": 0.91
+    }
+  },
+  "block_tokens": {
+    "llama8b": {
+      "test block 0": 12248,
+      "test block 1": 13132,
+      "test block 2": 11460,
+      "dev block 0": 14590,
+      "dev block 1": 12451
+    },
+    "mistral7b": {
+      "test block 0": 15349,
+      "test block 1": 16315,
+      "test block 2": 14214,
+      "dev block 0": 18206,
+      "dev block 1": 15599
+    },
+    "qwen7b": {
+      "test block 0": 14273,
+      "test block 1": 15017,
+      "test block 2": 13091,
+      "dev block 0": 16804,
+      "dev block 1": 14367
+    }
+  },
+  "max_prefix_tokens": 30000
+}

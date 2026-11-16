@@ -1,0 +1,19 @@
+{
+  "model": "llama8b",
+  "hf_id": "meta-llama/Llama-3.1-8B-Instruct",
+  "strategy": "rag",
+  "tag": "",
+  "split": "test",
+  "device": "cuda",
+  "quant": "nf4",
+  "uses_documents": true,
+  "top_k": 3,
+  "retriever": "dense",
+  "adapter": null,
+  "n_items_this_run": 387,
+  "wall_clock_s": 7217.6,
+  "peak_gpu_gb": 10.027,
+  "setup": {
+    "index_build_s": 11.96
+  }
+}
