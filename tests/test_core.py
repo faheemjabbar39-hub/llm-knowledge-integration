@@ -235,3 +235,24 @@ def test_topsis_prefers_dominant_option():
     m = pd.DataFrame({"accuracy": [.4, .6], "f1": [.5, .7], "hallucination_rate": [.4, .1], "latency_p50_ms": [500, 300],
                       "peak_gpu_gb": [10, 8], "cost_per_1k_usd": [1.0, .5]}, index=["worse", "better"])
     assert topsis(m, PROFILES["compliance"]).index[0] == "better"
+
+
+def test_strategy_report_runs_on_partial_results(tmp_path, monkeypatch):
+    import matplotlib
+    matplotlib.use("Agg")
+    import IPython.display
+    import kis.report as report
+    rng = np.random.default_rng(0)
+    (tmp_path / "raw").mkdir()
+    for s, acc in [("base", .05), ("rag", .5)]:
+        n = 504 if s == "base" else 300                       # RAG not finished yet
+        pd.DataFrame({"item_id": range(n), "model": "llama8b", "strategy": s, "tag": "",
+                      "answer_type": rng.choice(["span", "arithmetic"], n), "answer_from": "table",
+                      "correct": (rng.random(n) < acc).astype(int), "contains": 0, "f1": 0.0,
+                      "hallucinated": 0, "abstained": 0, "retrieval_hit": 1 if s == "rag" else None,
+                      "latency_ms": 1000.0, "prompt_tokens": 100}).to_csv(tmp_path / "raw" / f"llama8b__{s}.csv", index=False)
+    monkeypatch.setattr(report, "RESULTS", tmp_path)
+    monkeypatch.setattr(IPython.display, "display", lambda *a, **k: None)
+    assert report.show("rag").loc["Llama-3.1-8B", "Questions"] == 300
+    assert report.show("cag") is None                          # nothing to show yet, no error
+    assert (tmp_path / "figures" / "rag_overview.png").exists()
