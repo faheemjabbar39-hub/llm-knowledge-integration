@@ -427,3 +427,83 @@ tatqa-9a2466e0fe630165237ae9e3d8208daf,tatqa,test,1,span,table,qwen7b,cag,,42,Ho
 tatqa-b8730a5013ed27f310f4d165b4d82b49,tatqa,test,1,span,table-text,qwen7b,cag,,42,How much was the increase in revenue?,$199 million,"Answer: $6,497 thousand ; 7.3%","$6,497 thousand ; 7.3%",0,0,0.0,0,1,,,7006.25,0.0,15153,16,cuda,nf4
 tatqa-0cc2a888dd2540ce9991a759eb85bbaf,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the average Income tax effect on discontinued operations between 2017-2019?,"3,255.33 thousand","Calculation: (32,497 + 42,263) / 2 = 37,380
 Answer: 37,380","37,380",0,0,0.0,0,1,,,14969.03,0.0,15167,41,cuda,nf4
+tatqa-5dc3e81c89ee9aba078ceb9f6bbcad89,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,"What is the average percentage of net revenues for the period December 31, 2019 and 2018?",15%,"Calculation: (94.2% + 87.9%) / 2
+Answer: 91.05%",91.05%,0,0,0.0,0,1,,,11538.58,0.0,15173,30,cuda,nf4
+tatqa-9dcbfe815efc74d2a48a096973cf2cfd,tatqa,test,1,span,table-text,qwen7b,cag,,42,"How much was the net income in the third quarter, 2019?",$302 million,Answer: 33.98,33.98,0,0,0.0,0,1,,,4875.6,0.0,15162,9,cuda,nf4
+tatqa-46a8fd1168f1bcc3e19376c4ff900a75,tatqa,test,1,span,table-text,qwen7b,cag,,42,What was the total assets from APAC in 2019?,"958,744 thousand","Answer: 958,744","958,744",0,1,0.0,0,0,,,5455.56,0.0,15160,11,cuda,nf4
+tatqa-34e05c377aa4cec6cc7ab6feedb0812c,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the percentage of Satellite subscribers out of the total retail subscribers in 2019?,36.26%,"Calculation: 100.282% = 1,005,282 / 2,772,464 * 100
+Answer: 36.4%",36.4%,0,1,0.0,0,0,,,17555.77,0.0,15165,49,cuda,nf4
+tatqa-1b7436649beee022312bcaca2bf518b3,tatqa,test,1,span,table,qwen7b,cag,,42,What is the number of outstanding shares at the beginning of the period in 2019?,"547,949","Answer: 547,949","547,949",1,1,1.0,0,0,,,5574.41,0.0,15165,11,cuda,nf4
+tatqa-f89b68a5ad4dbadaedd8cea443ebce4c,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the percentage constitution of total operating lease obligations among the total contractual obligations?,22.85%,"Calculation: (332020 / 1185318) * 100
+Answer: 27.9%",27.9%,0,0,0.0,0,1,,,13060.57,0.0,15161,35,cuda,nf4
+tatqa-86547ff699ef3b43dc524f0aceb79496,tatqa,test,1,span,text,qwen7b,cag,,42,"In 2019, what was the pension settlement charge recognized?",$6.7 million,"Calculation: pension settlement charge = 6,726 - 94
+Answer: 6,632","6,632",0,0,0.0,0,1,,,10449.41,0.0,15160,27,cuda,nf4
+tatqa-be4161cae60c67f31415121761341114,tatqa,test,1,span,text,qwen7b,cag,,42,Why was there an increase in accrued revenue from 2018 to 2019?,"the acquisition of Sigma Systems (refer to Note 24). Additionally, the increase in accrued revenue was a result of software licences deployed on contract inception but have yet to be billed to the customer.","Calculation: Accrued revenue 2019 - Accrued revenue 2018 = 27,817 - 5,824 = 22,093 thousand
+Answer: 22,093 thousand","22,093 thousand",0,0,0.0,0,1,,,20288.44,0.0,15166,58,cuda,nf4
+tatqa-cf42ab5eb0e02d2fa26ecbd6f525fb13,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,"What was the percentage change in the the total net property, plant and equipment between 2018 and 2019?",5.67%,"Calculation: (105,038 - 99,401) / 99,401 * 100
+
+Answer: 5.7%",5.7%,0,0,0.0,0,1,,,15297.06,0.0,15173,42,cuda,nf4
+tatqa-a393d20a410ac6f5dcf0a2e000f20ee3,tatqa,test,1,multi-span,table,qwen7b,cag,,42,"In which year was interest income greater than 7,000 thousands?",2019 ; 2018,"Calculation: 7,000 < 7,804 ; 7,000 < 8,525
+Answer: 2018 ; 2019",2018 ; 2019,1,1,1.0,0,0,,,16139.81,0.0,15161,45,cuda,nf4
+tatqa-b4fe187360f1b3c591ace5616652de34,tatqa,test,1,span,table,qwen7b,cag,,42,What was the interest income in 2019?,"7,804 thousand","Answer: 7,804 thousand","7,804 thousand",1,1,1.0,0,0,,,5139.37,0.0,15157,10,cuda,nf4
+tatqa-1d568952985d546e1035c7b8311c07cf,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the percentage change in non-current assets in Asia Pacific?,68.18%,"Calculation: (7.4 - 4.4) / 4.4 * 100
+Answer: 68.18%",68.18%,1,1,1.0,0,0,,,12645.28,0.0,15158,34,cuda,nf4
+tatqa-32533d1bd67d1ad3e0d03442495e23f0,tatqa,test,1,span,table-text,qwen7b,cag,,42,What was the percentage change in the retail satellite TV net customer losses from 2018 to 2019?,4.3%,"Calculation: (-85,423 - (-89,231)) / -89,231 * 100
+Answer: 4.3%",4.3%,1,1,1.0,0,0,,,15003.18,0.0,15171,41,cuda,nf4
+tatqa-d2b7bc9e9acf6d3d002ea610fcd94b2d,tatqa,test,1,span,table-text,qwen7b,cag,,42,What was the total assets in 2018?,"1,932,642 thousand","Answer: 1,932,642","1,932,642",0,1,0.0,0,0,,,6083.66,0.0,15157,13,cuda,nf4
+tatqa-e152392e929647248d77b6d3bf9f285b,tatqa,test,1,multi-span,text,qwen7b,cag,,42,Which foreign jurisdictions had the greatest effect on the provision for income taxes?,China ; Mexico,Answer: China ; Mexico,China ; Mexico,1,1,1.0,0,0,,,3921.47,0.0,15159,6,cuda,nf4
+tatqa-55f98f213e0bf08cb4638a6a11395b1f,tatqa,test,1,count,table-text,qwen7b,cag,,42,"How many years did adjusted EBITDA exceed $4,000 million?",3,"Calculation: Count the number of years where Adjusted EBITDA is > $4,000 million
+Answer: 3",3,1,1,1.0,0,0,,,11157.29,0.0,15162,29,cuda,nf4
+tatqa-4d01ba962642e28c284761f7f8edde1e,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What is the average software-as-a-service related revenue in 2018 and 2019?,"69,238.5 thousand","Calculation: (72831 + 65646) / 2
+Answer: 69238.5",69238.5,0,1,0.0,0,0,,,12136.22,0.0,15168,32,cuda,nf4
+tatqa-a30c0da091bbd33f665ab11a25117074,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the percentage change in Interest expense between 2015 and 2016?,20.3%,"Calculation: (717 - 596) / 596 * 100
+Answer: 20.2%",20.2%,0,1,0.0,0,0,,,12477.23,0.0,15166,33,cuda,nf4
+tatqa-6f1652507bcbc0845aa582d579321209,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,How much was the difference in unearned revenue and accrued revenue in 2019?,748 thousand,"Calculation: 27,069 - 27,817 = -748
+Answer: -748",-748,0,0,0.0,0,1,,,11826.28,0.0,15164,31,cuda,nf4
+tatqa-84540a139de762e14b31a9e455234b7d,tatqa,test,1,multi-span,table-text,qwen7b,cag,,42,"Which years does the table provide information for the company's Property, plant and equipment?",2019 ; 2018,Answer: 2019 ; 2018,2019 ; 2018,1,1,1.0,0,0,,,6463.15,0.0,15162,14,cuda,nf4
+tatqa-fc285c7ae9eda4ee2a46ae6427a34f8c,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What is the difference in the total benefit obligations and total capital lease obligations?,"70,777 thousand","Calculation: 11.5 + 3.937 - (11.5 + 3.937) = 0
+
+Answer: 0",0,0,0,0.0,0,1,,,13962.36,0.0,15160,38,cuda,nf4
+tatqa-4e02f54a4ad0af10c8f2ccc939d9396a,tatqa,test,1,span,text,qwen7b,cag,,42,Where did the company acquire its intangible assets?,Substantially all of our intangible assets were acquired through our business combinations,Answer: I don't know,I don't know,0,0,0.0,1,0,,,4240.96,0.0,15155,7,cuda,nf4
+tatqa-276815a7f82a8c5eb1a4991d98fe253b,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the change in the number of IPTV retail subscribers in 2019?,"91,476","Calculation: 1767182 - 1675706
+Answer: 91476",91476,1,1,1.0,0,0,,,11508.74,0.0,15164,30,cuda,nf4
+tatqa-4cbfb35edba50a8f1b0181f045efabae,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the average number of shares beneficially owned by Daina Middleton and Wister Walcott?,"76,959.5","Calculation: (36,888 + 117,031) / 2
+Answer: 76,959.5","76,959.5",1,1,1.0,0,0,,,13419.57,0.0,15165,36,cuda,nf4
+tatqa-440e603ce10a29951e814f5bc73b25c6,tatqa,test,1,span,table-text,qwen7b,cag,,42,What was the amount of Other assets in 2018?,221 million,Answer: 221 thousand,221 thousand,0,1,0.0,0,0,,,4565.26,0.0,15159,8,cuda,nf4
+tatqa-73cebb2620f32179ef0899312db1bb4a,tatqa,test,1,span,text,qwen7b,cag,,42,What was the combined provision for income taxes for China and Mexico in 2019?,5.7 million,"Answer: 5,700 thousand","5,700 thousand",1,1,1.0,0,0,,,5206.57,0.0,15164,10,cuda,nf4
+tatqa-c5d30232ee560b83dfe35acd56ae1673,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the service cost increase / (decrease) from 2018 to 2019?,"-5,759 thousand",Answer: $50 thousand,$50 thousand,0,0,0.0,0,1,,,4305.24,0.0,15169,7,cuda,nf4
+tatqa-1f062475c54ae1fd6ec0e5ead36ef1a1,tatqa,test,1,span,table-text,qwen7b,cag,,42,What was the amount of Machinery and equipment in 2018?,"231,619 thousand","Answer: 231,619 thousand","231,619 thousand",1,1,1.0,0,0,,,5738.34,0.0,15160,12,cuda,nf4
+tatqa-56d9aa6afc1e09a1727aacc4c0435d45,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the 2019 percentage change in accrued revenue?,377.63%,"Calculation: (27,817 - 5,824) / 5,824 * 100
+Answer: 305.1%",305.1%,0,0,0.0,0,1,,,14923.94,0.0,15159,41,cuda,nf4
+tatqa-90fe2b41c9523249f82744554c978991,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,"What was the percentage change in Total cash, cash equivalents and restricted cash between 2018 and 2019?",20.93%,"Calculation: (1578.0 - 1304.9) / 1304.9 * 100
+Answer: 20.9%",20.9%,0,1,0.0,0,0,,,15300.93,0.0,15172,42,cuda,nf4
+tatqa-78243bca4642af52f4972ebc60da6cae,tatqa,test,1,multi-span,table,qwen7b,cag,,42,What are the number of shares beneficially owned by Brian Kinion and Christopher Lien respectively?,"16,016 ; 326,584","Answer: 16,016 ; 326,584","16,016 ; 326,584",1,1,1.0,0,0,,,8029.83,0.0,15164,19,cuda,nf4
+tatqa-1162ee3282e831d1bf030b9fd04b933a,tatqa,test,1,span,text,qwen7b,cag,,42,What was the Sales to foreign and domestic distributors in 2019?,56.0%,Answer: 56.0%,56.0%,1,1,1.0,0,0,,,4875.04,0.0,15161,9,cuda,nf4
+tatqa-50d6a01be8a0986d1b43bdb3a32e3446,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the change in the Loss from discontinued operations from 2017 to 2018?,"-60,921 thousand","Calculation: 30,348 - (-11,915)
+Answer: 42,263","42,263",0,0,0.0,0,1,,,11165.97,0.0,15168,29,cuda,nf4
+tatqa-c443b39a5b363a5340671279c4bb323c,tatqa,test,1,span,text,qwen7b,cag,,42,What does the loss from discounted operations represent?,"the net of losses incurred by Netsmart for the years ended December 31, 2018 and 2017 partly offset by earnings attributable to two solutions acquired during the fourth quarter of 2017 as part of the EIS Business that we no longer support effective as of March 31, 2018.","Answer: The loss from discontinued operations represents the net of losses incurred by Netsmart for the years ended December 31, 2018 and 2017 partly offset by earnings attributable to two solutions acquired during the fourth quarter of 2017 as part of the EIS Business that we no longer support effective as of March 31, 2018.","The loss from discontinued operations represents the net of losses incurred by Netsmart for the years ended December 31, 2018 and 2017 partly offset by earnings attributable to two solutions acquired during the fourth quarter of 2017 as part of the EIS Business that we no longer support effective as of March 31, 2018.",0,1,0.9462,0,0,,,27764.18,0.0,15154,82,cuda,nf4
+tatqa-0009bd87a55c3494b46c041853bd6f10,tatqa,test,1,span,table,qwen7b,cag,,42,What is the total contractual obligations that has payments due in less than 1 year?,"$1,128,447","Calculation: 1,128,447 + 854,100
+Answer: 1,982,547","1,982,547",0,0,0.0,0,1,,,13340.72,0.0,15162,36,cuda,nf4
+tatqa-81b881cc0662b96e845a4c22ea8a9a94,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What was the change in data and analytic services between 2017 and 2019?,-4.7 million,"Calculation: 19.3 - 24.0
+Answer: -4.7",-4.7,0,1,0.0,0,0,,,9012.44,0.0,15167,22,cuda,nf4
+tatqa-0e8a0685514572ed0cc38cc0cfc79fbc,tatqa,test,1,span,table-text,qwen7b,cag,,42,What was the other expense (income) in 2017?,(31) million,Answer: -31,-31,0,1,0.0,0,0,,,3845.43,0.0,15160,6,cuda,nf4
+tatqa-849f7583cad2db9f290b1c2fc45ad332,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the average revenue from Avnet Logistics between 2017-2019?,30.7,"Calculation: (31.3 + 35.3 + 25.5) / 3
+Answer: 30.5%",30.5%,0,0,0.0,0,1,,,12782.25,0.0,15166,34,cuda,nf4
+tatqa-cdc90a7d753adafe55336e437d965d01,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the percentage change in the Cost of living indexation rate for post-employment benefit obligations?,0%,Answer: I don't know,I don't know,0,0,0.0,1,0,,,4281.96,0.0,15165,7,cuda,nf4
+tatqa-ffaeaa885f86bb9a34c7e987bedd4c0d,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,"What is the average Net income attributable to parent company for the period December 31, 2019 and 2018?",405 million,"Calculation: (418 + 302) / 2 = 360
+Answer: 360",360,0,0,0.0,0,1,,,11251.56,0.0,15175,29,cuda,nf4
+tatqa-7bc555b3e654e11c5b2641088fac4db2,tatqa,test,1,span,table,qwen7b,cag,,42,What is the service cost for 2019?,$ 50 thousand,Answer: 50 thousand,50 thousand,1,1,1.0,0,0,,,4200.99,0.0,15157,7,cuda,nf4
+tatqa-1981559a9b9d5f4e8f3091fb0681c66f,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,"What is the change in Interest expense from, 2019 to 2018?","24,933 thousand","Calculation: 279,059 - 254,126
+Answer: 24,933","24,933",0,1,0.0,0,0,,,11818.96,0.0,15166,31,cuda,nf4
+tatqa-247b29ff672119850a618a5e59edf29e,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the average accrued revenue between 2018 and 2019?,"16,820.5 thousand","Calculation: (27,817 + 5,824) / 2
+Answer: 16,820.5","16,820.5",0,1,0.0,0,0,,,12733.11,0.0,15164,34,cuda,nf4
+tatqa-cc0e5e497bfb14079699c6f29e6dcf06,tatqa,test,1,span,table-text,qwen7b,cag,,42,What was the amount of buildings and improvements in 2019?,"68,350 thousand","Answer: 68,350","68,350",0,1,0.0,0,0,,,5133.67,0.0,15160,10,cuda,nf4
+tatqa-3e5ce768bd22c7caf20f1d1aef8f5223,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What was the change in Cash and cash equivalents between 2017 and 2018?,406.6 million,"Calculation: 1208.7 - 802.1
+Answer: 406.6",406.6,0,1,0.0,0,0,,,10565.84,0.0,15167,27,cuda,nf4
+tatqa-815dfd7619effb3e1e9b4f51c92c72ff,tatqa,test,1,span,table-text,qwen7b,cag,,42,What was Total Revenue in 2019?,"$576,523 thousand","Answer: $576,523","$576,523",0,1,0.0,0,0,,,5470.9,0.0,15156,11,cuda,nf4
+tatqa-b2a59da57ce3afdcdf9ff0c3ca6aad02,tatqa,test,1,multi-span,table,qwen7b,cag,,42,In which year was Flextronics Technology less than 20.0%?,2018 ; 2017,Answer: 2018,2018,0,0,0.0,0,1,,,4574.9,0.0,15162,8,cuda,nf4
+tatqa-7d5b1a2ee87959576cb72f841d616f43,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,"What is the change in Interest income from, 2019 to 2018?",-721 thousand,"Calculation: 2019_interest_income - 2018_interest_income = 7804 - 8525 = -721
+Answer: -721 thousand",-721 thousand,1,1,1.0,0,0,,,15940.09,0.0,15166,44,cuda,nf4
+tatqa-2b7119e561053bd5be0c178998cfa4a2,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the change in Personnel-related items from 2018 to 2019?,"12,682","Calculation: 45,318 - 32,636
+Answer: 12,682","12,682",1,1,1.0,0,0,,,11199.73,0.0,15166,29,cuda,nf4
+tatqa-62f5c4cba4e328b1ffe8eaa6c329bd1e,tatqa,test,1,span,text,qwen7b,cag,,42,Why did subscription revenue increase by $76.3 million between 2018 and 2017?,"The increase was attributable to new business, which included new customers, upsells, and renewals from existing customers.","Answer: new business, which included new customers, upsells, and renewals from existing customers.","new business, which included new customers, upsells, and renewals from existing customers.",0,0,0.8571,0,1,,,8715.0,0.0,15170,21,cuda,nf4
