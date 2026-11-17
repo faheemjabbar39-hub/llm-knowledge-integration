@@ -273,3 +273,84 @@ tatqa-89185044a4b3bc7f5f343c17f8d67b52,tatqa,test,1,multi-span,table-text,qwen7b
 tatqa-67ce9efa3d59d51dc6f2c7a697bcbbe8,tatqa,test,1,span,table,qwen7b,cag,,42,What was the variance in percent for Net revenues from fiscal 2017 to fiscal 2018?,8%,Answer: 8%,8%,1,1,1.0,0,0,,,3983.81,0.0,15169,6,cuda,nf4
 tatqa-6529d497a5be9783bd4ff0d48f3c2d1d,tatqa,test,1,multi-span,table,qwen7b,cag,,42,What are the components of Accrued expenses and other payables?,Personnel-related items ; Deferred revenue ; Financing related items ; Current portion of lease liabilities ; Advanced payments from customers ; Supplier related items ; Marketing related items ; R&D projects ; Other,Personnel-related items ; Deferred revenue ; Advanced payments from customers ; Supplier related items ; Marketing related items ; R&D projects ; Other,Personnel-related items ; Deferred revenue ; Advanced payments from customers ; Supplier related items ; Marketing related items ; R&D projects ; Other,0,0,0.8095,0,1,,,10482.88,0.0,15159,27,cuda,nf4
 tatqa-b78d0ee9650ba9d4025615a33e870c2b,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What was the change in the amount of Other assets between 2018 and 2019?,168 million,Answer: 168 ;,168 ;,0,1,0.0,0,0,,,4554.75,0.0,15168,8,cuda,nf4
+tatqa-71f5d3793338046b7929bcf566bec801,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,"What was the % change in the balance, beginning of the period from 2018 to 2019?",9.97%,"Calculation: (397 - 361) / 361 * 100
+Answer: 10.5%",10.5%,0,0,0.0,0,1,,,12444.96,0.0,15171,33,cuda,nf4
+tatqa-8152fda50946d68c571959b7a2f28400,tatqa,test,1,span,table,qwen7b,cag,,42,In which year was the amount of non-current assets in Asia Pacific larger?,2019,Answer: 2018,2018,0,0,0.0,0,1,,,4471.87,0.0,15160,8,cuda,nf4
+tatqa-6b1c82c73255db91e1583b0d75f57672,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,"What is the change in First Quarter: High price from Fiscal Year Ended April 28, 2018 to Fiscal Year Ended April 27, 2019?",0.5,"Calculation: 45.45 - 44.95
+Answer: 0.5%",0.5%,0,0,0.0,0,1,,,9906.46,0.0,15184,25,cuda,nf4
+tatqa-679f03324e62ac16d07bc3e09c8e2376,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the average Gain on sale of Netsmart between 2017-2019?,"166,823.67 thousand","Calculation: (500471 + 0 + 0) / 3 = 166823.67
+Answer: 166823.67",166823.67,0,1,0.0,0,0,,,16283.34,0.0,15167,45,cuda,nf4
+tatqa-ed4499c93941e3a171f0eb13065db6df,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the average net revenue for fiscal 2018 and fiscal 2017?,"2,454.5 million","Calculation: (89,464 + 89,162) / 2
+Answer: 89,313","89,313",0,0,0.0,0,1,,,12457.35,0.0,15166,33,cuda,nf4
+tatqa-defc0cd33399804bbb0cf71cd9a7f187,tatqa,test,1,count,table-text,qwen7b,cag,,42,"How many years did the amount of Machinery and equipment exceed $200,000 thousand?",2,"Calculation: count year where Machinery and equipment > 200,000
+Answer: 3",3,0,0,0.0,0,1,,,9604.12,0.0,15166,24,cuda,nf4
+tatqa-b0f6ee92b99fe21c6833c4a291da8e07,tatqa,test,1,multi-span,table,qwen7b,cag,,42,What was the % of revenue for Research and Development expense in 2019 and 2018?,25% ; 28%,Answer: 25% ; 28%,25% ; 28%,1,1,1.0,0,0,,,5849.53,0.0,15169,12,cuda,nf4
+tatqa-4fa28717e6116cc5ab21c1a9623e6a0e,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the percentage change in the number of shares forfeited during the period from 2018 to 2019?,-37.29%,"Calculation: (140,687 - 224,354) / 224,354 * 100
+Answer: -37.1%",-37.1%,0,0,0.0,0,1,,,16239.45,0.0,15173,45,cuda,nf4
+tatqa-587984b897fac513f24769a16342c523,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the percentage of IPTV subscribers out of the total retail subscribers in 2019?,63.74%,"Calculation: 1767182 / 2772464 * 100
+Answer: 63.8%",63.8%,0,1,0.0,0,0,,,13038.18,0.0,15166,35,cuda,nf4
+tatqa-5c948e445c6c5dd4617840e42f3a394a,tatqa,test,1,span,text,qwen7b,cag,,42,"Who was the largest customer in 2019, 2018 and 2017?",Nokia,Nokia ;,Nokia ;,1,1,1.0,0,0,,,3347.33,0.0,15169,4,cuda,nf4
+tatqa-96b821be95abc59e079c123bef8a759c,tatqa,test,1,span,text,qwen7b,cag,,42,What is the weighted average duration of the post-employment benefit obligation?,14 years,Answer: 14 years,14 years,1,1,1.0,0,0,,,4198.57,0.0,15159,7,cuda,nf4
+tatqa-70938e749d3e16304ae9e030eaabbc9b,tatqa,test,1,span,table-text,qwen7b,cag,,42,What was subscription revenue in 2019?,"$542,968 thousand","Answer: $542,968","$542,968",0,1,0.0,0,0,,,5416.28,0.0,15156,11,cuda,nf4
+tatqa-93837e64b62f8ebf3ed24c254d28038b,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the change in Total Revenue between 2017 and 2018 as a percentage?,11.6%,"Calculation: (537891 - 481985) / 481985 * 100
+
+Answer: 11.5%",11.5%,0,0,0.0,0,1,,,15268.43,0.0,15168,42,cuda,nf4
+tatqa-eeef320a4199b74356c5e18e58c33fb4,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the average Research and development expense for 2018 and 2019?,"45,664.5 thousand","Calculation: (41,305 + 50,024) / 2
+Answer: 45,664.5","45,664.5",0,1,0.0,0,0,,,13113.52,0.0,15166,35,cuda,nf4
+tatqa-db9ff2e7fa925dcce4c3107fe5edd63b,tatqa,test,1,span,text,qwen7b,cag,,42,What resulted in the change in the retail IPTV net subscriber activations in 2019?,"the impact of a maturing Fibe TV market, slower new service footprint growth and greater substitution of traditional TV services with OTT services, partly offset by higher Alt TV activations","Answer: the impact of a maturing Fibe TV market, slower new service footprint growth and greater substitution of traditional TV services with OTT services, partly offset by higher Alt TV activations.","the impact of a maturing Fibe TV market, slower new service footprint growth and greater substitution of traditional TV services with OTT services, partly offset by higher Alt TV activations.",1,1,1.0,0,0,,,14364.11,0.0,15165,39,cuda,nf4
+tatqa-e428d0a932e9d8211ee0329036b8152f,tatqa,test,1,span,table,qwen7b,cag,,42,In which year is the number of outstanding shares at the end of the period higher?,2018,Answer: 2018,2018,1,1,1.0,0,0,,,4585.35,0.0,15162,8,cuda,nf4
+tatqa-05329b6d579cfaf2118467007ff5c3ea,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the average number of shares beneficially owned by Brian Kinion and Christopher Lien?,"171,300","Calculation: (16016 + 326584) / 2
+Answer: 171,300","171,300",1,1,1.0,0,0,,,12451.43,0.0,15164,33,cuda,nf4
+tatqa-c52ff59805f1a366994e43f357f320b6,tatqa,test,1,multi-span,table-text,qwen7b,cag,,42,What are the respective software and hardware related revenue in 2018 and 2019?,"4,534 thousand ; 8,015 thousand",Answer: 4.5 million ; 8.0 million,4.5 million ; 8.0 million,0,0,0.0,0,1,,,6505.27,0.0,15167,14,cuda,nf4
+tatqa-513e7f501d42e3bc7870446d8a24dbd1,tatqa,test,1,span,table-text,qwen7b,cag,,42,What were the data and analytic services in 2017?,24.0 million,Answer: 24.0,24.0,0,1,0.0,0,0,,,4565.4,0.0,15159,8,cuda,nf4
+tatqa-467031848d7d448173b9b7e412941197,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What was the percentage change in the total assets from Corporate and eliminations between 2018 and 2019?,-48.18%,"Calculation: (80,608 - 155,544) / 155,544 * 100
+Answer: -48.1%",-48.1%,0,1,0.0,0,0,,,15957.13,0.0,15172,44,cuda,nf4
+tatqa-3f3fc0cfba102b83ec5a21b0c8f33f78,tatqa,test,1,span,table-text,qwen7b,cag,,42,What was the interest expense in 2019?,$279.1 million,"Calculation: Interest expense in 2019 = $279,059 thousand
+Answer: 279,059 thousand","279,059 thousand",0,1,0.0,0,0,,,12757.75,0.0,15157,34,cuda,nf4
+tatqa-5ec5098ab08f8d0df6381e5233cdb12a,tatqa,test,1,span,text,qwen7b,cag,,42,When are multi-year agreement customers invoiced?,"For multi-year agreements, we generally invoice customers annually at the beginning of each annual coverage period.",Answer: At the beginning of each annual coverage period.,At the beginning of each annual coverage period.,0,0,0.6364,0,1,,,5782.83,0.0,15154,12,cuda,nf4
+tatqa-85239559504b80773492989196b047d2,tatqa,test,1,span,table,qwen7b,cag,,42,What was the change in the total retail subscribers?,"6,053","Calculation: 2,772,464 - 2,766,411
+Answer: 6,053","6,053",1,1,1.0,0,0,,,12677.57,0.0,15155,34,cuda,nf4
+tatqa-5a50d960844f144f55a683de524e3378,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What was the percentage change in Other non-current assets between 2018 and 2019?,31.11%,"Calculation: (590 - 450) / 450 * 100
+Answer: 28.9%",28.9%,0,0,0.0,0,1,,,12447.57,0.0,15168,33,cuda,nf4
+tatqa-4ae17ecad17ddf2eae99a7aa58165f95,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,"What is the increase/ (decrease) in Net income attributable to parent company from the period December 31, 2018 to 2019?",-26 million,"Calculation: 1917 - 1265
+Answer: 652",652,0,0,0.0,0,1,,,8994.15,0.0,15181,22,cuda,nf4
+tatqa-fabe3b6a76158d5e91d4d3bab10fe51e,tatqa,test,1,count,table-text,qwen7b,cag,,42,"How many years did net income exceed $1,000 million?",3,"Calculation: Count the years where Net Income > $1,000 million
+Answer: 3",3,1,1,1.0,0,0,,,9229.19,0.0,15160,23,cuda,nf4
+tatqa-356aff8044b8effef7e27adc85133fdd,tatqa,test,1,span,table,qwen7b,cag,,42,What was the variance in percent for Operating income from fiscal 2017 to fiscal 2018?,153%,"Calculation: (473 - 187) / 187 * 100
+Answer: 153%",153%,1,1,1.0,0,0,,,12160.61,0.0,15169,32,cuda,nf4
+tatqa-36453309f798d54fba67e60cac4490e2,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the change in the % of revenue from 2018 to 2019?,-3%,"Calculation: 2019_percentage - 2018_percentage
+Answer: 25% ; Answer: I don't know",I don't know,0,0,0.0,1,0,,,11847.98,0.0,15167,31,cuda,nf4
+tatqa-e53ab7e2d14c6360f1da8d7d34223f35,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,How much was the average total amortization of intangible assets in 2018 and 2019?,"1,654.5 million","Calculation: (1620 + 1689) / 2
+Answer: 1654.5",1654.5,0,1,0.0,0,0,,,11203.13,0.0,15170,29,cuda,nf4
+tatqa-90171f039b2b0af836e5594a59a87061,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What was the percentage change in Provision for income tax expense (benefit) between 2017 and 2018?,112.67%,"Calculation: (9,132 - 4,294) / 4,294 * 100
+Answer: 112.1%",112.1%,0,0,0.0,0,1,,,14672.3,0.0,15173,40,cuda,nf4
+tatqa-1b268b9e5265aa05cd34accaa81cf8a2,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What was the change in the amount of Buildings and Improvements between 2018 and 2019?,"-2,172 thousand","Calculation: 224,312 - 231,619
+Answer: -7,307","-7,307",0,0,0.0,0,1,,,11514.72,0.0,15170,30,cuda,nf4
+tatqa-f35d2857f1f6dd09ddea00b7b7a0a391,tatqa,test,1,span,table-text,qwen7b,cag,,42,What were the deferred tax assets in 2019?,201 million,Answer: 201 Calculation: $201 thousand Answer: 201 thousand,201 thousand,0,1,0.0,0,0,,,8577.41,0.0,15158,21,cuda,nf4
+tatqa-870cba4e3b9e530c527c6bbb15a68cb9,tatqa,test,1,span,text,qwen7b,cag,,42,What do the contributions beyond fiscal 2019 depend on?,"Pension asset performance, future interest rates, future tax law changes, and future changes in regulatory funding requirements.","Answer: They depend on pension asset performance, future interest rates, future tax law changes, and future changes in regulatory funding requirements.","They depend on pension asset performance, future interest rates, future tax law changes, and future changes in regulatory funding requirements.",0,1,0.9189,0,0,,,10486.82,0.0,15159,27,cuda,nf4
+tatqa-7b6cef8481c751f5416b64d0ae942fcb,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,"What was the non-current assets of United Kingdom as a percentage of the total amount in Europe, Middle East and Africa in 2019?",60%,"Calculation: 6.9 / 11.5 * 100
+
+Answer: 60.0%",60.0%,1,1,1.0,0,0,,,10908.15,0.0,15175,28,cuda,nf4
+tatqa-83ef155b4cab28f5b0b225cbc65b0a35,tatqa,test,1,span,table,qwen7b,cag,,42,"Based on the post-employment benefit obligations, which year recorded a longer life expectancy at age 65?",2019,Answer: 2019,2019,1,1,1.0,0,0,,,4592.35,0.0,15167,8,cuda,nf4
+tatqa-7676ec4c855457713914ceea0c6da8f8,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the average balance at the end of the period over the 3 year period from 2017 to 2019?,397.33 million,"Calculation: (231,619 + 224,312 + 214,312) / 3
+Answer: 219,045","219,045",0,0,0.0,0,1,,,16258.38,0.0,15175,45,cuda,nf4
+tatqa-ef919c08ed12587a2554c92cc4889944,tatqa,test,1,count,table-text,qwen7b,cag,,42,"How many years did total assets exceed $2,000,000 thousand?",1,"Calculation: Count the years where total assets are > $2,000,000 thousand
+Answer: 2",2,0,0,0.0,0,1,,,10851.37,0.0,15164,28,cuda,nf4
+tatqa-76918162e712a6b2c30ada60084bdbd9,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the change in the revenues from Sanmina from 2018 to 2019?,1.7,Answer: -12.7%,-12.7%,0,0,0.0,0,1,,,4886.7,0.0,15168,9,cuda,nf4
+tatqa-5bbcaeb1ebcedc949361aba4d6559771,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the percentage change in Other in FY2019 from FY2018?,0%,Answer: 9.1%,9.1%,0,0,0.0,0,1,,,4610.08,0.0,15165,8,cuda,nf4
+tatqa-d5a38e3e3243d90ea9c52b8e051856fb,tatqa,test,1,span,text,qwen7b,cag,,42,How does the company determine the allowance for doubtful accounts?,"We determine the allowance based on known troubled accounts, historical experience, and other currently available evidence.","The allowance for doubtful accounts reflects the company's best estimate of probable losses inherent in the accounts receivable balance. It is determined based on known troubled accounts, historical experience, and other currently available evidence.","The allowance for doubtful accounts reflects the company's best estimate of probable losses inherent in the accounts receivable balance. It is determined based on known troubled accounts, historical experience, and other currently available evidence.",0,0,0.5652,0,1,,,14906.65,0.0,15156,41,cuda,nf4
+tatqa-f82fbd60ae2025904ade0124b4e3c656,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the total amount amortized for the categories of cloud services and license support agreements and related relationships and other in 2018?,862 million,"Calculation: 731 + 131 = 862
+Answer: 862 thousand",862 thousand,0,1,0.0,0,0,,,10288.88,0.0,15174,26,cuda,nf4
+tatqa-23931625349faef28a9854606e3502ee,tatqa,test,1,span,text,qwen7b,cag,,42,"Where is the common stock traded under the symbol ""MEI.""?",New York Stock Exchange,New York Stock Exchange ;,New York Stock Exchange ;,1,1,1.0,0,0,,,3933.72,0.0,15159,6,cuda,nf4
+tatqa-db7c302d1e4c5bd19dba0aa072dddfb8,tatqa,test,1,span,text,qwen7b,cag,,42,What was the cost of internally-developed software in 2019?,$6.5 million,"Calculation: 6.5 million + 7.7 million - 1.2 million
+Answer: 13 million",13 million,0,0,0.0,0,1,,,10866.79,0.0,15161,28,cuda,nf4
+tatqa-bc730843182e1cf28f723fb79dbb4dad,tatqa,test,1,span,table,qwen7b,cag,,42,What is the number of shares granted during the period in 2018?,"772,303","Answer: 772,303","772,303",1,1,1.0,0,0,,,5531.65,0.0,15162,11,cuda,nf4
+tatqa-7e3691ab258de428d13c045acc10dd0a,tatqa,test,1,span,text,qwen7b,cag,,42,What do the non-current assets according to segment reporting only include?,the values of continuing operations in the previous year,Answer: the values of continuing operations in the previous year,the values of continuing operations in the previous year,1,1,1.0,0,0,,,5814.81,0.0,15158,12,cuda,nf4
+tatqa-4bed6d1b05fe0881af8605e8509b31ce,tatqa,test,1,span,text,qwen7b,cag,,42,What was the pre-tax curtailment gain in 2018?,$1.2 million,Answer: 1.3 million,1.3 million,0,0,0.0,0,1,,,4582.23,0.0,15161,8,cuda,nf4
+tatqa-0c3619d3834040c109d1a2b4cce35d19,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What is the percentage change in Total accrued expenses and other payables from 2018 to 2019?,51.37%,"Calculation: (149,843 - 98,993) / 98,993 * 100
+Answer: 51.8%",51.8%,0,0,0.0,0,1,,,15657.03,0.0,15171,43,cuda,nf4
+tatqa-674fab11d7c05176edd76cbfb08bd9e1,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,"For post-employment benefit obligations, what is the percentage change in the life expectancy at age 65 in 2019?",0.43%,Answer: I don't know,I don't know,0,0,0.0,1,0,,,4337.04,0.0,15173,7,cuda,nf4
+tatqa-34ce841a6d50bf440e209af717efe5d2,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What was the change in Subscription Revenue between 2018 and 2019?,"69,916 thousand","Calculation: 542,968 - 473,052
+Answer: 69,916","69,916",0,1,0.0,0,0,,,11836.11,0.0,15165,31,cuda,nf4
+tatqa-75cf287d63006b8aa356b378e96f62c0,tatqa,test,1,arithmetic,table,qwen7b,cag,,42,What was the average interest cost for 2017-2019?,"27,026.33 thousand","Calculation: (28,870 + 28,870 + 21,882) / 3
+Answer: 26,124","26,124",0,0,0.0,0,1,,,14944.7,0.0,15163,41,cuda,nf4
