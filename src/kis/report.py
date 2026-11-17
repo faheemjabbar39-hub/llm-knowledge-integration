@@ -61,6 +61,8 @@ def _summary(d: pd.DataFrame, peak: dict, strategy: str) -> pd.DataFrame:
         "Median time (s)": g["latency_ms"].median() / 1000,
         "Slow answers p95 (s)": g["latency_ms"].quantile(.95) / 1000,
         "Prompt length (tokens)": g["prompt_tokens"].mean(),
+        "Answer cut off at length limit %": (g["output_tokens"].apply(lambda x: (x >= 96).mean() * 100)
+                                             if "output_tokens" in d else np.nan),
         "Mean time (s)": g["latency_ms"].mean() / 1000,
     })
     t["Peak GPU memory (GB)"] = [peak.get((m, strategy)) for m in t.index]

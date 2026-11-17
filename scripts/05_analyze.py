@@ -55,7 +55,8 @@ def summarise(df: pd.DataFrame, by: list[str]) -> pd.DataFrame:
         retrieval_hit=("retrieval_hit", "mean"), latency_p50_ms=("latency_ms", "median"),
         latency_p95_ms=("latency_ms", lambda x: x.quantile(.95)),
         latency_p99_ms=("latency_ms", lambda x: x.quantile(.99)),
-        mean_latency_ms=("latency_ms", "mean"), mean_output_tokens=("output_tokens", "mean")).reset_index()
+        mean_latency_ms=("latency_ms", "mean"), mean_output_tokens=("output_tokens", "mean"),
+        truncated_rate=("output_tokens", lambda x: (x >= 96).mean())).reset_index()
 
 
 def main():

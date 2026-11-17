@@ -57,8 +57,20 @@ def run_condition(args, cfg, strategy, items, kb, retriever, model, tok, device,
     out_csv = out_dir / f"{stem}.csv"
     done = set()
     if out_csv.exists():
-        with open(out_csv, encoding="utf-8") as f:
-            done = {r["item_id"] for r in csv.DictReader(f)}
+        with open(out_csv, encoding="utf-8", newline="") as f:
+            rows = list(csv.DictReader(f))
+        if args.redo_truncated:      # answers cut off at the old length limit are generated again
+            old_cap = json.loads(out_csv.with_suffix(".meta.json").read_text()).get("max_new_tokens", 96) \
+                if out_csv.with_suffix(".meta.json").exists() else 96
+            keep = [r for r in rows if int(r["output_tokens"]) < old_cap]
+            if len(keep) < len(rows):
+                print(f"  re-running {len(rows) - len(keep)} answers that were cut off at {old_cap} tokens")
+                with open(out_csv, "w", newline="", encoding="utf-8") as f:
+                    w = csv.DictWriter(f, fieldnames=FIELDS)
+                    w.writeheader()
+                    w.writerows(keep)
+            rows = keep
+        done = {r["item_id"] for r in rows}
     todo = [it for it in items if it["id"] not in done]
     print(f"\n=== {stem}: {len(items)} questions, {len(done)} already done, {len(todo)} to run")
     if not todo:
@@ -142,7 +154,8 @@ def run_condition(args, cfg, strategy, items, kb, retriever, model, tok, device,
     if strategy == "cag":
         setup["cache_build_s_by_block"] = {**old.get("setup", {}).get("cache_build_s_by_block", {}), **cache_build}
     meta = {"model": args.model, "hf_id": cfg["models"][args.model], "strategy": strategy, "tag": args.tag,
-            "split": args.split, "device": device, "quant": quant, "uses_documents": use_docs or strategy == "cag",
+            "split": args.split, "device": device, "quant": quant, "max_new_tokens": max_new,
+            "uses_documents": use_docs or strategy == "cag",
             "top_k": top_k if use_docs else None, "retriever": retriever.kind if use_docs else None,
             "adapter": args.adapter, "n_items_this_run": len(todo),
             "wall_clock_s": round(old.get("wall_clock_s", 0) + time.time() - t_start, 1),
@@ -164,6 +177,8 @@ def main(model_and_tok=None):
     ap.add_argument("--tag", default="", help="label for an extra run, e.g. nodocs or k5")
     ap.add_argument("--top-k", type=int, default=None, help="override rag.top_k")
     ap.add_argument("--retriever", default=None, choices=["dense", "tfidf"], help="override rag.retriever")
+    ap.add_argument("--redo-truncated", action="store_true",
+                    help="generate again the answers that were cut off at an earlier, smaller max_new_tokens")
     args = ap.parse_args()
 
     if "qlora" in args.strategy:

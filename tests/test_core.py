@@ -196,6 +196,20 @@ def test_pipeline_base_rag_cag_and_resume(tiny, tmp_path, monkeypatch):
     rows = list(csv.DictReader(open(tmp_path / "results" / "raw" / "llama8b__cag.csv")))
     assert len(rows) == len(items) and len({r["item_id"] for r in rows}) == len(items)
 
+    # --redo-truncated: an answer marked as cut off is generated again, the others are kept
+    path = tmp_path / "results" / "raw" / "llama8b__base.csv"
+    rows = list(csv.DictReader(open(path, encoding="utf-8", newline="")))
+    cut = rows[2]["item_id"]
+    rows[2]["output_tokens"] = "9999"
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0]))
+        w.writeheader()
+        w.writerows(rows)
+    call("--strategy", "base", "--redo-truncated")
+    rows = list(csv.DictReader(open(path, encoding="utf-8", newline="")))
+    assert len(rows) == len(items) and len({r["item_id"] for r in rows}) == len(items)
+    assert next(r for r in rows if r["item_id"] == cut)["output_tokens"] != "9999"
+
 
 def test_qlora_examples_train_only_on_the_reply(tiny):
     from kis.qlora import add_lora, build_examples, train
@@ -250,7 +264,7 @@ def test_strategy_report_runs_on_partial_results(tmp_path, monkeypatch):
                       "answer_type": rng.choice(["span", "arithmetic"], n), "answer_from": "table",
                       "correct": (rng.random(n) < acc).astype(int), "contains": 0, "f1": 0.0,
                       "hallucinated": 0, "abstained": 0, "retrieval_hit": 1 if s == "rag" else None,
-                      "latency_ms": 1000.0, "prompt_tokens": 100}).to_csv(tmp_path / "raw" / f"llama8b__{s}.csv", index=False)
+                      "latency_ms": 1000.0, "prompt_tokens": 100, "output_tokens": 20}).to_csv(tmp_path / "raw" / f"llama8b__{s}.csv", index=False)
     monkeypatch.setattr(report, "RESULTS", tmp_path)
     monkeypatch.setattr(IPython.display, "display", lambda *a, **k: None)
     assert report.show("rag").loc["Llama-3.1-8B", "Questions"] == 300

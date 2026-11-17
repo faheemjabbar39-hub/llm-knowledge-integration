@@ -133,13 +133,30 @@ def is_abstention(answer: str) -> bool:
     return len(a.split()) <= 8 and bool(_ABSTAIN_SHORT.search(a))
 
 
-def _split_answer(answer: str, n_gold: int) -> list[str]:
+def _split_candidates(answer: str, n_gold: int) -> list[list[str]]:
+    """Ways to cut a list answer into items: '; ', ', ', and ', ... and' (an item may itself contain 'and')."""
     if n_gold == 1:
-        return [answer.strip()]
-    if ";" in answer:
-        return [p.strip() for p in answer.split(";") if p.strip()]
-    parts = [p.strip() for p in re.split(r"\s+and\s+|,\s+(?!\d{3}\b)", answer) if p.strip()]
-    return parts if len(parts) > 1 else [answer.strip()]
+        return [[answer.strip()]]
+    cands = []
+    for pattern in (r";", r",\s+(?!\d{3}\b)", r",\s+(?:and\s+)?(?!\d{3}\b)|\s+and\s+(?=[^,]*$)",
+                    r"\s+and\s+|,\s+(?!\d{3}\b)"):
+        parts = [p.strip(" .") for p in re.split(pattern, answer) if p.strip(" .")]
+        if len(parts) > 1 and parts not in cands:
+            cands.append(parts)
+    return cands or [[answer.strip()]]
+
+
+_YEAR = re.compile(r"(?:19[89]\d|20[0-3]\d)")
+
+
+def _numbers(text: str) -> list[str]:
+    out = []
+    for m in _NUM.finditer(str(text)):
+        n = m.group(0).strip()
+        if n.count("(") != n.count(")"):           # a bracket from the sentence, e.g. "(for 2018)"
+            n = n.strip("()")                       # balanced "(47,969)" stays negative
+        out.append(n.strip())
+    return out
 
 
 def _match_one(pred: str, gold: str, scale: str) -> tuple[bool, bool]:
@@ -194,17 +211,33 @@ def score_tatqa(item: dict, prediction: str) -> dict:
     if is_abstention(answer):
         return {"final_answer": answer, "correct": 0, "contains": 0, "f1": 0.0, "abstained": 1, "hallucinated": 0}
 
-    parts = _split_answer(answer, len(golds))
-    remaining, strict_all = list(parts), len(parts) == len(golds)
-    for g in golds:                                   # each gold span needs its own predicted part
-        hit = next((p for p in remaining if _match_one(p, g, scale)[0]), None)
-        if hit is None:
-            strict_all = False
-        else:
+    strict_all = False
+    for parts in _split_candidates(answer, len(golds)):   # strict: one predicted item per gold answer
+        if len(parts) != len(golds):
+            continue
+        remaining, ok = list(parts), True
+        for g in golds:
+            hit = next((p for p in remaining if _match_one(p, g, scale)[0]), None)
+            if hit is None:
+                ok = False
+                break
             remaining.remove(hit)
+        if ok:
+            strict_all = True
+            break
     if len(golds) == 1 and _is_numeric_span(golds[0]) and ";" in answer:
         strict_all = False                            # one value was asked for, several were given
-    lenient_all = all(any(_match_one(p, g, scale)[1] for p in parts + [answer]) for g in golds)
+
+    # lenient: right values even if the scale or extra words differ, but no extra or alternative values
+    if all(_is_numeric_span(g) for g in golds) and (len(golds) > 1 or ";" in answer):
+        nums = _numbers(answer)
+        if not any(_YEAR.fullmatch(g.strip()) for g in golds):   # "(for 2018)" labels are not extra values
+            nums = [n for n in nums if not _YEAR.fullmatch(n)]
+        lenient_all = bool(nums) and all(any(_match_one(n, g, scale)[1] for n in nums) for g in golds) \
+            and all(any(_match_one(n, g, scale)[1] for g in golds) for n in nums)
+    else:
+        lenient_all = all(any(_match_one(p, g, scale)[1] for p in [answer] + [x for c in
+                          _split_candidates(answer, len(golds)) for x in c]) for g in golds)
     lenient_all = lenient_all or strict_all
 
     numeric = all(_is_numeric_span(g) for g in golds)
