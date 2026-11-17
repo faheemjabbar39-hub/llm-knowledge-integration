@@ -191,3 +191,85 @@ tatqa-5166422113d04fdfaebf33cfb9a9e402,tatqa,test,0,count,table-text,qwen7b,cag,
 tatqa-afe196e1ac486bdab48cad41046bcf08,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the value of the amortized costs of  the corporate bonds as a percentage of the total amortized cost?,51.98%,"Calculation: (48,499 / 93,301) * 100
 
 Answer: 51.9%",51.9%,0,1,0.0,0,0,,,12353.27,0.0,14425,34,cuda,nf4
+tatqa-9aa64958e7669971ed45266af1f84cad,tatqa,test,0,arithmetic,table-text,qwen7b,cag,,42,"What is the average Personnel costs, including teammate benefits for 2018 and 2019?","639,396 thousand","Calculation: (684837 + 593955) / 2
+Answer: 589396",589396,0,0,0.0,0,1,,,12022.0,0.0,14424,33,cuda,nf4
+tatqa-d49e717bdad26aa79b699127efe9d423,tatqa,test,0,arithmetic,table-text,qwen7b,cag,,42,What was the change in total products and services between 2017 and 2018?,"1,325 million","Calculation: 36709 - 35705
+Answer: 1004",1004,0,0,0.0,0,1,,,9570.9,0.0,14423,25,cuda,nf4
+tatqa-9e40289691711fd382cca12084f46319,tatqa,test,0,span,table-text,qwen7b,cag,,42,Which year has the highest amount of total deferred tax asset?,2019,Answer: 2019,2019,1,1,1.0,0,0,,,4396.67,0.0,14413,8,cuda,nf4
+tatqa-c0f8990029e229b7880b128fd3d7bd12,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the percentage change in net carrying value between 2018 and 2019?,1.46%,"Calculation: (293174 - 288967) / 288967 * 100
+
+Answer: 1.7%",1.7%,0,0,0.0,0,1,,,14531.93,0.0,14423,41,cuda,nf4
+tatqa-5cf9d1ffc30dc6778c87af9ccfd7840b,tatqa,test,0,span,table-text,qwen7b,cag,,42,What is the percentage increase in CTS sales in 2019?,27%,"Calculation: (849.8 - 670.7) / 670.7 * 100
+Answer: 26.4%",26.4%,0,0,0.0,0,1,,,13827.26,0.0,14417,39,cuda,nf4
+tatqa-4be20501905f6e3edc14f95ebf7933b3,tatqa,test,0,arithmetic,table-text,qwen7b,cag,,42,"If the other associated cost related to sharebased compensation expense was included, what is the other associated costs for 2018?",15.8 million,Answer: 15.9 million,15.9 million,0,0,0.0,0,1,,,4757.54,0.0,14428,9,cuda,nf4
+tatqa-04af3f262653b232a0b6a7667486a0d4,tatqa,test,0,multi-span,table,qwen7b,cag,,42,What are the 2017 and 2018 total revenue respectively?,"$272,098 million ; $213,159 million","Answer: 1,717,018 ; 1,958,557","1,717,018 ; 1,958,557",0,0,0.0,0,1,,,9255.93,0.0,14419,24,cuda,nf4
+tatqa-8039ea4c8f281b490be3e64dd7aef8e7,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the value of the amortized costs of  the municipal bonds as a percentage of the total amortized cost?,48.02%,"Calculation: (44802 / 93301) * 100
+
+Answer: 48.0%",48.0%,0,1,0.0,0,0,,,11706.77,0.0,14425,32,cuda,nf4
+tatqa-eabb9c45a828ea60f34a060d95dba19b,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What was the percentage change in net accounts receivables between 2018 and 2019?,-13.86%,"Calculation: (51932-60290)/60290 * 100
+
+Answer: -13.8%",-13.8%,0,1,0.0,0,0,,,12912.77,0.0,14425,36,cuda,nf4
+tatqa-15df9f77d630c4d2f4f125a97a96490e,tatqa,test,0,span,text,qwen7b,cag,,42,In which year was primarily driven by ASTRO Acquisition,from fiscal year 2018 to 2017,Answer: 2019,2019,0,0,0.0,0,1,,,4385.9,0.0,14411,8,cuda,nf4
+tatqa-635d756eb2458f9cb07ad2fc9ef5ce7a,tatqa,test,0,count,table,qwen7b,cag,,42,How many remuneration key performance indicators used Annual Incentive Plan as the remuneration measure?,3,Answer: 2,2,0,0,0.0,0,1,,,3481.44,0.0,14422,5,cuda,nf4
+tatqa-5c555d5a100b743cec1990d4c2cce66f,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the percentage change of the average price paid per share between fiscal year 2018 and 2019?,-59.72%,"Calculation: (2.55 - 6.33) / 6.33 * 100
+Answer: -59.0%",-59.0%,0,0,0.0,0,1,,,12918.7,0.0,14428,36,cuda,nf4
+tatqa-7eb5b75b5eb7f577886026ff68d41111,tatqa,test,0,span,table-text,qwen7b,cag,,42,What was the revenue from Security in 2018?,"2,352 million","Answer: 2,352","2,352",0,1,0.0,0,0,,,4693.27,0.0,14414,9,cuda,nf4
+tatqa-68ac85a450ef19266a4be4741e6bd897,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What was the percentage change in the fair value of plan assets between 2018 and 2019?,-0.56%,"Calculation: (1426 - 1418) / 1418 * 100
+Answer: 0.57%",0.57%,0,0,0.0,0,1,,,12934.19,0.0,14426,36,cuda,nf4
+tatqa-9e911ea40c0dbbf82a7b521e15d35903,tatqa,test,0,arithmetic,table-text,qwen7b,cag,,42,What was the total for lease receivables as a percentage of the total of all gross receivables?,22.22%,"Calculation: (1204 + 991 + 35) / (1204 + 991 + 35 + 3367 + 1920 + 151 + 1413 + 939 + 17) * 100
+
+Answer: 29.5%",29.5%,0,0,0.0,0,1,,,26637.13,0.0,14423,81,cuda,nf4
+tatqa-f45439ae7479de537c0e217ff510c8ff,tatqa,test,0,span,text,qwen7b,cag,,42,How are the expenses recognized for RSUs with performance criteria?,recognized over the period during which the performance criteria is expected to be achieved,Expense is recognized over the period during which the performance criteria is expected to be achieved.,Expense is recognized over the period during which the performance criteria is expected to be achieved.,0,1,0.9231,0,0,,,7431.5,0.0,14413,18,cuda,nf4
+tatqa-ba4f35744b2e810390528c8a5fc8fa75,tatqa,test,0,span,text,qwen7b,cag,,42,Which agreement was entered by the group on 21 December 2018?,"agreement for the divestment of a component of freehold investment property in Melbourne, Victoria for $1m.","Answer: Agreement for the divestment of a component of freehold investment property in Melbourne, Victoria","Agreement for the divestment of a component of freehold investment property in Melbourne, Victoria",0,0,0.9231,0,1,,,8360.09,0.0,14419,21,cuda,nf4
+tatqa-a0f656a49ef6f8b990321dddc94ade29,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the value of revenue from subscription and returns as a percentage of the 2018 total revenue?,93.37%,"Calculation: (254056 / 213159) * 100
+Answer: 119.2%",119.2%,0,0,0.0,0,1,,,12608.06,0.0,14424,35,cuda,nf4
+tatqa-c19e59e3ac49b36d6cb63fcd0443f4fd,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the percentage change in the revenue from 2018 to 2019?,23.07%,"Calculation: (272098000 - 213159000) / 213159000 * 100
+Answer: 28%",28%,0,0,0.0,0,1,,,16897.12,0.0,14422,49,cuda,nf4
+tatqa-c87ab516e867aed1042d4788bfa55344,tatqa,test,0,arithmetic,table-text,qwen7b,cag,,42,What was the change in the Projected benefit obligation between 2018 and 2019?,-70 thousand,"Calculation: 2019_projected_benefit_obligation - 2018_projected_benefit_obligation = change_in_projected_benefit_obligation
+Answer: 500 thousand",500 thousand,0,0,0.0,0,1,,,16241.7,0.0,14424,47,cuda,nf4
+tatqa-0360296840de0645325b8cb6306101ff,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the net value of the unrealized gains and losses of the company's municipal bonds?,-97 thousand,"Calculation: Unrealized Gains - Unrealized Losses
+Answer: 122 thousand",122 thousand,0,0,0.0,0,1,,,8343.35,0.0,14420,21,cuda,nf4
+tatqa-82a48abedc1e5cfed2abad3c9a10ae56,tatqa,test,0,span,table,qwen7b,cag,,42,What was the maximum group operating profit in 2019?,283.8 million,Answer: 283.8 million,283.8 million,1,1,1.0,0,0,,,5010.08,0.0,14415,10,cuda,nf4
+tatqa-1a8d3dfa32a1e5e9b7b819fc471eafb7,tatqa,test,0,span,table,qwen7b,cag,,42,"What was the revenue in the Year Ended December 31, 2019?","$2,222,559 thousand","Answer: 272,098 thousand","272,098 thousand",0,0,0.0,0,1,,,5597.36,0.0,14420,12,cuda,nf4
+tatqa-c148020f43b4ba93d6dc65235e69e7cc,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What proportion of the total cost does the acquisition related cost form part of in 2019?,11.87%,"Calculation: 1696 / 14290 * 100
+Answer: 11.85%",11.85%,0,1,0.0,0,0,,,11379.93,0.0,14422,31,cuda,nf4
+tatqa-ea04ef99bd2e5a0ec0abda707cb3b52a,tatqa,test,0,span,text,qwen7b,cag,,42,What is included in the acquisition related costs?,"costs include legal expense, due diligence costs, and other professional costs incurred for business acquisitions","Acquisition-related costs include legal expense, due diligence costs, and other professional costs incurred for business acquisitions.","Acquisition-related costs include legal expense, due diligence costs, and other professional costs incurred for business acquisitions.",0,1,0.9677,0,0,,,8623.68,0.0,14410,22,cuda,nf4
+tatqa-2b708ec2125318b21345dbb0d5fd631c,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the increase / (decrease) in the Noncurrent assets from 2018 to 2019?,"39,531 million","Calculation: 113,767 - 74,236
+Answer: 39,531 million","39,531 million",1,1,1.0,0,0,,,11423.26,0.0,14428,31,cuda,nf4
+tatqa-382db12a3a49ded71cc3f7e3924f8636,tatqa,test,0,arithmetic,table-text,qwen7b,cag,,42,What is the change in Adjusted EBITDA from 2018 to 2019?,37.2 million,"Calculation: 110.5 - 73.3
+Answer: 37.2",37.2,0,1,0.0,0,0,,,9241.43,0.0,14424,24,cuda,nf4
+tatqa-f5b391186459d87daf95bd87fa07ed94,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the company’s return on assets in 2017?,6.54%,Answer: I don't know,I don't know,0,0,0.0,1,0,,,4084.68,0.0,14416,7,cuda,nf4
+tatqa-4730fdd9577c47fa63efacfc3b773fca,tatqa,test,0,arithmetic,table-text,qwen7b,cag,,42,"What is the average Number of Nonvested shares of RSUs for December 31, 2018 to 2019?",8.75 million,"Calculation: (8.6 + 8.9) / 2 = 8.75
+Answer: 8.75",8.75,0,1,0.0,0,0,,,11432.93,0.0,14432,31,cuda,nf4
+tatqa-539fa070ca866c8cdeeee1fa3d56d0dd,tatqa,test,0,span,table-text,qwen7b,cag,,42,What was the Net cash (used in) provided by investing activities in 2018?,"1,240,914 thousand","Answer: -872,454","-872,454",0,0,0.0,0,1,,,5325.51,0.0,14421,11,cuda,nf4
+tatqa-ab9c7e42aa1226af3843496e95aece8e,tatqa,test,0,arithmetic,table-text,qwen7b,cag,,42,What was the percentage change in total product revenue between 2018 and 2019?,6.25%,"Calculation: (39005 - 36709) / 36709 * 100
+Answer: 6.2%",6.2%,0,0,0.0,0,1,,,13538.96,0.0,14423,38,cuda,nf4
+tatqa-1d288a55cf5f4e8a7ead4a3a36b8ba4b,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the percentage change in revenues from 2018 to 2019?,13.48%,"Calculation: (272098000 - 213159000) / 213159000 * 100
+Answer: 28%",28%,0,0,0.0,0,1,,,16904.43,0.0,14421,49,cuda,nf4
+tatqa-27f1a9c7a554b928ab4da0afb589b3f6,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What was the percentage change in net revenue between November 2018 and February 2019?,-6.75%,"Calculation: (6,066,990 - 6,506,275) / 6,506,275 * 100
+Answer: -6.7%",-6.7%,0,0,0.0,0,1,,,17160.12,0.0,14424,50,cuda,nf4
+tatqa-2eeca709a398b774370678ccab967488,tatqa,test,0,arithmetic,table-text,qwen7b,cag,,42,What was the change in Net cash provided by (used in) operating activities between 2018 and 2019?,"2,298,514 thousand","Calculation: 1,193,066 - (-1,105,448)
+Answer: 2,298,514","2,298,514",0,1,0.0,0,0,,,13572.1,0.0,14429,38,cuda,nf4
+tatqa-c9e84f7cba3dea8ec062cf4f1117edfe,tatqa,test,0,arithmetic,table-text,qwen7b,cag,,42,What was the change in Net (decrease) increase in cash and cash equivalents between 2017 and 2018?,"-209,830 thousand","Calculation: 68030 - (-94606)
+Answer: 162636",162636,0,0,0.0,0,1,,,10225.51,0.0,14430,27,cuda,nf4
+tatqa-31afc05cae44c5fb2fc2ab8aaf933130,tatqa,test,0,span,table,qwen7b,cag,,42,What was the gross profit in May 2019?,"443,799 thousand","Answer: 443,799","443,799",0,1,0.0,0,0,,,5290.72,0.0,14414,11,cuda,nf4
+tatqa-d82ccbf862bbea0c2a60bf0f08df9c5d,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What was the difference between the 2019 actual group cash generation compared with the 2019 target group cash generation?,11.4 million,"Calculation: 2019 actual group cash generation - 2019 target group cash generation = 296,400 - 285,000
+Answer: 11,400","11,400",0,0,0.0,0,1,,,17483.55,0.0,14429,51,cuda,nf4
+tatqa-08d598ef197ff29cdfbb8f4f23cd0197,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the percentage change in the net loss between 2018 and 2019?,-89.14%,"Calculation: (-10,352 - (-95,306)) / -95,306 * 100
+Answer: 89.1%",89.1%,0,0,0.0,0,1,,,14758.39,0.0,14423,42,cuda,nf4
+tatqa-4ff4f974448880cf833b3bb7dd01fef9,tatqa,test,0,multi-span,table-text,qwen7b,cag,,42,Which years does the table provide information for the company's groups of similar products and services?,2019 ; 2018 ; 2017,Answer: 2019 ; 2018 ; 2017,2019 ; 2018 ; 2017,1,1,1.0,0,0,,,8054.0,0.0,14419,20,cuda,nf4
+tatqa-7fe35c434c8e1861fa8c6a6cde246d0a,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the company's total cost of revenues in 2018 and 2019?,"49,997 thousand","Calculation: 27,154 + 22,843
+Answer: 50,997","50,997",0,0,0.0,0,1,,,10830.13,0.0,14423,29,cuda,nf4
+tatqa-c691cdcabce4c06d371dc5757b6c0a44,tatqa,test,0,multi-span,text,qwen7b,cag,,42,Which locations are responsible for driving the increase in sales in 2019?,New York ; Boston ; San Francisco Bay Area ; Australia,"Answer: CTS sales increased 27% to $849.8 million in 2019 compared to $670.7 million in 2018, including the impact of the adoption of ASC 606. ; Sales in 2019 were higher in the U.S. primarily due to system development on contracts in New York, Boston, and the San Francisco Bay Area.","CTS sales increased 27% to $849.8 million in 2019 compared to $670.7 million in 2018, including the impact of the adoption of ASC 606. ; Sales in 2019 were higher in the U.S. primarily due to system development on contracts in New York, Boston, and the San Francisco Bay Area.",0,0,0.2593,0,1,,,29021.89,0.0,14418,89,cuda,nf4
+tatqa-b5d0a13b7a7903f6c513f0d6eca02fca,tatqa,test,0,multi-span,table-text,qwen7b,cag,,42,What years does the table provide data for Net cash provided by (used in) operating activities?,2019 ; 2018 ; 2017,2019 ; 2018 ; 2017,2019 ; 2018 ; 2017,1,1,1.0,0,0,,,7128.06,0.0,14420,17,cuda,nf4
+tatqa-96b3812bfb44b33ce77e863ecacd6c44,tatqa,test,0,arithmetic,table,qwen7b,cag,,42,What is the average total bookings for 2018 and 2019?,"3,206.35 million","Calculation: (3401.2 + 3011.5) / 2
+Answer: 3206.35",3206.35,0,1,0.0,0,0,,,12278.91,0.0,14420,34,cuda,nf4
+tatqa-5108c8d463a13aeb0b5aaa52df89841d,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What was the change in the Amount computed using the statutory rate between 2018 and 2019?,"-23,371 thousand","Calculation: 35791 - 59162
+Answer: -23371",-23371,0,1,0.0,0,0,,,10288.75,0.0,15170,26,cuda,nf4
+tatqa-203bb56c919b48a38a6e4a05ea5030b4,tatqa,test,1,multi-span,table,qwen7b,cag,,42,What are the number of shares beneficially owned by L. Gordon Crovitz and Donald P. Hutchison respectively?,"53,819 ; 88,205","Calculation: L. Gordon Crovitz shares = 16,982 + 36,837; Donald P. Hutchison shares = 37,011 + 7,028 + 44,166
+Answer: 53,819 ; 88,205","53,819 ; 88,205",1,1,1.0,0,0,,,25733.53,0.0,15169,75,cuda,nf4
+tatqa-8da1b48f92e889f09a1028a95354a066,tatqa,test,1,multi-span,text,qwen7b,cag,,42,"What was the percentage of Direct sales to contract manufacturers and consignment warehouses in 2019, 2018 and 2017 respectively?",41.3% ; 34.9% ; 39.0%,Answer: 41.3% ; 34.9% ; 39.0%,41.3% ; 34.9% ; 39.0%,1,1,1.0,0,0,,,9269.99,0.0,15179,23,cuda,nf4
+tatqa-89185044a4b3bc7f5f343c17f8d67b52,tatqa,test,1,multi-span,table-text,qwen7b,cag,,42,What are the respective maintenance revenue in 2018 and 2019?,"9,834 thousand ; 10,519 thousand","Answer: 9,834 ; 10,519","9,834 ; 10,519",0,1,0.0,0,0,,,7398.84,0.0,15164,17,cuda,nf4
+tatqa-67ce9efa3d59d51dc6f2c7a697bcbbe8,tatqa,test,1,span,table,qwen7b,cag,,42,What was the variance in percent for Net revenues from fiscal 2017 to fiscal 2018?,8%,Answer: 8%,8%,1,1,1.0,0,0,,,3983.81,0.0,15169,6,cuda,nf4
+tatqa-6529d497a5be9783bd4ff0d48f3c2d1d,tatqa,test,1,multi-span,table,qwen7b,cag,,42,What are the components of Accrued expenses and other payables?,Personnel-related items ; Deferred revenue ; Financing related items ; Current portion of lease liabilities ; Advanced payments from customers ; Supplier related items ; Marketing related items ; R&D projects ; Other,Personnel-related items ; Deferred revenue ; Advanced payments from customers ; Supplier related items ; Marketing related items ; R&D projects ; Other,Personnel-related items ; Deferred revenue ; Advanced payments from customers ; Supplier related items ; Marketing related items ; R&D projects ; Other,0,0,0.8095,0,1,,,10482.88,0.0,15159,27,cuda,nf4
+tatqa-b78d0ee9650ba9d4025615a33e870c2b,tatqa,test,1,arithmetic,table-text,qwen7b,cag,,42,What was the change in the amount of Other assets between 2018 and 2019?,168 million,Answer: 168 ;,168 ;,0,1,0.0,0,0,,,4554.75,0.0,15168,8,cuda,nf4
