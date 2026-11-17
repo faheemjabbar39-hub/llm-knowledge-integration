@@ -896,7 +896,7 @@ Calculation: 27,069 - 22,914 + 27,817 - 5,824
 Answer: 6,048","6,048",0,0,0.0,0,1,,,24044.58,0.0,13274,59,cuda,nf4
 tatqa-84540a139de762e14b31a9e455234b7d,tatqa,test,1,multi-span,table-text,llama8b,cag,,42,"Which years does the table provide information for the company's Property, plant and equipment?",2019 ; 2018,"Calculation: The table provides information for the years ended March 31, 2019, 2018, and 2017.
 
-Answer: 2019, 2018, 2017","2019, 2018, 2017",0,1,0.0,0,0,,,17827.76,0.0,13274,42,cuda,nf4
+Answer: 2019, 2018, 2017","2019, 2018, 2017",0,0,0.0,0,1,,,17827.76,0.0,13274,42,cuda,nf4
 tatqa-fc285c7ae9eda4ee2a46ae6427a34f8c,tatqa,test,1,arithmetic,table-text,llama8b,cag,,42,What is the difference in the total benefit obligations and total capital lease obligations?,"70,777 thousand","Calculation: Total contractual obligations - Total contractual obligations excluding benefit obligations and capital lease obligations.
 
 Total contractual obligations = $4,788,478
@@ -1427,7 +1427,7 @@ tatqa-8e5766b11acd635d3a24563056ead42b,tatqa,test,2,span,table-text,llama8b,cag,
 Answer: $77,177","$77,177",0,0,0.0,0,1,,,7238.42,0.0,11600,15,cuda,nf4
 tatqa-bbb46c071300d93b614a99abcf8494b8,tatqa,test,2,span,table-text,llama8b,cag,,42,Which year had a greater Over 2 months overdue past due but not impaired receivables?,2019,"Calculation: 2766 - 2680
 Answer: 86",86,0,0,0.0,0,1,,,7577.11,0.0,11604,16,cuda,nf4
-tatqa-7060efbc982b5a94531e36e6407eb16a,tatqa,test,2,multi-span,table-text,llama8b,cag,,42,For what years is information on earnings per share available?,2018 ; 2019,"Answer: 2017, 2018, 2019.","2017, 2018, 2019.",0,1,0.0,0,0,,,7234.18,0.0,11596,15,cuda,nf4
+tatqa-7060efbc982b5a94531e36e6407eb16a,tatqa,test,2,multi-span,table-text,llama8b,cag,,42,For what years is information on earnings per share available?,2018 ; 2019,"Answer: 2017, 2018, 2019.","2017, 2018, 2019.",0,0,0.0,0,1,,,7234.18,0.0,11596,15,cuda,nf4
 tatqa-8a190f8f51d10d291221aa2841e6ab80,tatqa,test,2,multi-span,table,llama8b,cag,,42,What are the respective APRU from off-net in 2017 and 2018 respectively?,"$ 1,239 ; $ 1,155","Calculation: ARPU—off-net in 2017 = $1,239; ARPU—off-net in 2018 = $1,155
 
 Answer: $1,239 ; $1,155","$1,239 ; $1,155",1,1,1.0,0,0,,,17235.45,0.0,11604,45,cuda,nf4

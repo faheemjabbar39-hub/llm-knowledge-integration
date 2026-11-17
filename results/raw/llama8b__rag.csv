@@ -306,7 +306,7 @@ tatqa-bb6b3c241b6359e3b01d24144e5ef860,tatqa,test,0,span,table-text,llama8b,rag,
 
 Answer: $5,803","$5,803",0,1,0.0,0,0,1,d9929fa56778e739f071d0d586171994 0e9c79da0db8e0e9f5e58f9c2bdf6bb8 ce2ea049e35bd18c190d6f5676ec7d3d,14108.92,12.0,1586,15,cuda,nf4
 tatqa-646fdf5774eafc1db2ca26899c6fcb60,tatqa,test,0,multi-span,table,llama8b,rag,,42,What are the types of revenue in the table?,Software license revenue ; Subscription and maintenance revenue ; Search advertising revenue ; Service revenue ; Other revenue,"Calculation: Software license revenue + Subscription and maintenance revenue + Search advertising revenue + Service revenue + Other revenue
-Answer: Software license revenue, Subscription and maintenance revenue, Search advertising revenue, Service revenue, Other revenue","Software license revenue, Subscription and maintenance revenue, Search advertising revenue, Service revenue, Other revenue",0,1,1.0,0,0,1,ce2ea049e35bd18c190d6f5676ec7d3d 434b94166389d203839e681526978a7d e641836950c1db8da4260bb7842d1242,19326.65,12.78,1776,43,cuda,nf4
+Answer: Software license revenue, Subscription and maintenance revenue, Search advertising revenue, Service revenue, Other revenue","Software license revenue, Subscription and maintenance revenue, Search advertising revenue, Service revenue, Other revenue",1,1,1.0,0,0,1,ce2ea049e35bd18c190d6f5676ec7d3d 434b94166389d203839e681526978a7d e641836950c1db8da4260bb7842d1242,19326.65,12.78,1776,43,cuda,nf4
 tatqa-017e9cc9b5693f7992e44c3f59416de1,tatqa,test,0,arithmetic,table-text,llama8b,rag,,42,"What is the change in Personnel costs, including teammate benefits between 2018 and 2019?","90,882 thousand","Calculation: $684,837 - $593,955
 
 Answer: $90,882","$90,882",0,1,0.0,0,0,1,fc2f2ae5ca42d41eacf2f01cd6a89fa4 434b94166389d203839e681526978a7d f4e5e687e6185cabde6d70a4d37f729f,14638.31,12.98,1550,20,cuda,nf4
@@ -547,7 +547,7 @@ tatqa-08d598ef197ff29cdfbb8f4f23cd0197,tatqa,test,0,arithmetic,table,llama8b,rag
 Answer: -90.3%",-90.3%,0,0,0.0,0,1,1,734df6cfe7b18ff15734dd10c3d8e4b3 0fa66bdde5dce465760cf558173d40c6 434b94166389d203839e681526978a7d,17182.13,15.77,1683,32,cuda,nf4
 tatqa-4ff4f974448880cf833b3bb7dd01fef9,tatqa,test,0,multi-span,table-text,llama8b,rag,,42,Which years does the table provide information for the company's groups of similar products and services?,2019 ; 2018 ; 2017,"The table in Document 3 provides information for the company's groups of similar products and services for the years 2015, 2016, 2017, 2018, and 2019.
 
-Answer: 2015, 2016, 2017, 2018, 2019","2015, 2016, 2017, 2018, 2019",0,1,0.0,0,0,0,ce2ea049e35bd18c190d6f5676ec7d3d 0fa66bdde5dce465760cf558173d40c6 930920fe5224bbd051390e4e332fb0cc,29600.2,14.02,2549,64,cuda,nf4
+Answer: 2015, 2016, 2017, 2018, 2019","2015, 2016, 2017, 2018, 2019",0,0,0.0,0,1,0,ce2ea049e35bd18c190d6f5676ec7d3d 0fa66bdde5dce465760cf558173d40c6 930920fe5224bbd051390e4e332fb0cc,29600.2,14.02,2549,64,cuda,nf4
 tatqa-7fe35c434c8e1861fa8c6a6cde246d0a,tatqa,test,0,arithmetic,table,llama8b,rag,,42,What is the company's total cost of revenues in 2018 and 2019?,"49,997 thousand","Calculation: $27,154 + $4,311
 Calculation: $22,843 + $4,311
 
@@ -559,7 +559,7 @@ tatqa-b5d0a13b7a7903f6c513f0d6eca02fca,tatqa,test,0,multi-span,table-text,llama8
 
 The table in Document 2 provides data for the years ended August 31, 2019 and 2018.
 
-The table in Document 3 provides data for the years ended December 31, 2019, 2018, 2017, 2016, and 2015.","The table in Document 3 provides data for the years ended December 31, 2019, 2018, 2017, 2016, and 2015.",0,1,0.0,0,0,1,0b31ec7e0200c0354c067a2cf192f4af a533cbf8b477a41e6b83ce4c69b67b85 930920fe5224bbd051390e4e332fb0cc,28663.0,16.31,2065,91,cuda,nf4
+The table in Document 3 provides data for the years ended December 31, 2019, 2018, 2017, 2016, and 2015.","The table in Document 3 provides data for the years ended December 31, 2019, 2018, 2017, 2016, and 2015.",0,0,0.0,0,1,1,0b31ec7e0200c0354c067a2cf192f4af a533cbf8b477a41e6b83ce4c69b67b85 930920fe5224bbd051390e4e332fb0cc,28663.0,16.31,2065,91,cuda,nf4
 tatqa-96b3812bfb44b33ce77e863ecacd6c44,tatqa,test,0,arithmetic,table,llama8b,rag,,42,What is the average total bookings for 2018 and 2019?,"3,206.35 million","Calculation: ($3,011.5 + $3,401.2) / 2
 
 Answer: $3,206.35 million","$3,206.35 million",1,1,1.0,0,0,1,e641836950c1db8da4260bb7842d1242 434b94166389d203839e681526978a7d 6e260005a649d937ae07604bcf3af3ba,18237.19,14.99,1822,31,cuda,nf4
@@ -1413,7 +1413,7 @@ Answer: 40.1%",40.1%,0,0,0.0,0,1,1,6bd0f8a7f2b32dbe8e6563877b4663de 33295076b558
 tatqa-ffe49d757c2d5eb8dfe4a8993bfd7e1c,tatqa,test,2,arithmetic,table,llama8b,rag,,42,What was the percentage change in the amount at 31 December?,-13.04%,"Calculation: ((2.0 - 2.3) / 2.3) * 100
 Calculation: ((2.3 - 2.0) / 2.0) * 100
 
-Answer: -13.0 % ; 13.0 %",-13.0 % ; 13.0 %,0,1,0.0,0,0,1,6ad2ec5c0b711b3fb827cb77b1ebecbe 640f5c960d678aa3ee9fd2f6d2732412 6406863d7dd28b35452d7fda63aee1dc,12771.42,13.87,789,60,cuda,nf4
+Answer: -13.0 % ; 13.0 %",-13.0 % ; 13.0 %,0,0,0.0,0,1,1,6ad2ec5c0b711b3fb827cb77b1ebecbe 640f5c960d678aa3ee9fd2f6d2732412 6406863d7dd28b35452d7fda63aee1dc,12771.42,13.87,789,60,cuda,nf4
 tatqa-ab007d8a4c643492a9312c096956dffe,tatqa,test,2,arithmetic,table,llama8b,rag,,42,What was the change in PSP payments for the Group in 2019 from 2018?,0.3 million,"Calculation: PSP 2019 - PSP 2018 = 2.1 - 1.8 = 0.3
 
 Answer: 0.3",0.3,0,1,0.0,0,0,1,718c2f0e3e14824e3366330fd18eb128 6ad2ec5c0b711b3fb827cb77b1ebecbe fcb7772c54b34b8dc98dbeaed568a453,16633.69,14.06,1599,35,cuda,nf4
@@ -1534,7 +1534,7 @@ Answer: $77.2 million",$77.2 million,1,1,1.0,0,0,1,78442b3ac80feaa89e377fd7f73c1
 tatqa-bbb46c071300d93b614a99abcf8494b8,tatqa,test,2,span,table-text,llama8b,rag,,42,Which year had a greater Over 2 months overdue past due but not impaired receivables?,2019,"Calculation: (2019 Over 2 months overdue past due but not impaired receivables) - (2018 Over 2 months overdue past due but not impaired receivables)
 
 Answer: I don't know",I don't know,0,0,0.0,1,0,1,90f27fce7bbbda3fa39e96667c98b8f0 640f5c960d678aa3ee9fd2f6d2732412 0dfb4455ae2e1b2066e99d9a3a05baf0,18218.87,12.98,1605,45,cuda,nf4
-tatqa-7060efbc982b5a94531e36e6407eb16a,tatqa,test,2,multi-span,table-text,llama8b,rag,,42,For what years is information on earnings per share available?,2018 ; 2019,"Answer: 2018, 2019, 2017.","2018, 2019, 2017.",0,1,0.0,0,0,1,8b1c7617ae16b63840f3cfc52ea82824 fcb7772c54b34b8dc98dbeaed568a453 9a43ac474979cb7ecf516b5a8e7849ee,12825.99,12.85,1424,15,cuda,nf4
+tatqa-7060efbc982b5a94531e36e6407eb16a,tatqa,test,2,multi-span,table-text,llama8b,rag,,42,For what years is information on earnings per share available?,2018 ; 2019,"Answer: 2018, 2019, 2017.","2018, 2019, 2017.",0,0,0.0,0,1,1,8b1c7617ae16b63840f3cfc52ea82824 fcb7772c54b34b8dc98dbeaed568a453 9a43ac474979cb7ecf516b5a8e7849ee,12825.99,12.85,1424,15,cuda,nf4
 tatqa-8a190f8f51d10d291221aa2841e6ab80,tatqa,test,2,multi-span,table,llama8b,rag,,42,What are the respective APRU from off-net in 2017 and 2018 respectively?,"$ 1,239 ; $ 1,155","Calculation: To find the APRU (Average Revenue Per User) from off-net, we need to calculate the revenue from off-net and then divide it by the number of subscribers. However, the exact number of subscribers is not provided in the given documents. We can only calculate the revenue from off-net.
 
 Revenue from off-net in 2017 is not provided. However, we can calculate the revenue from off-net in 2018.

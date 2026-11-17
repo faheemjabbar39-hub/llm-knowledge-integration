@@ -271,7 +271,7 @@ tatqa-017e9cc9b5693f7992e44c3f59416de1,tatqa,test,0,arithmetic,table-text,mistra
 Answer: [Value from the report]",[Value from the report],0,0,0.0,0,1,,,5987.12,0.0,163,48,cuda,nf4
 tatqa-d1d3ffbba916f628660f222fbf0a6505,tatqa,test,0,multi-span,table-text,mistral7b,base,,42,Which years does the table provide information for accounts receivable?,2019 ; 2018,"Calculation: Identify the years listed in the table for accounts receivable.
 
-Answer: 2018, 2019, 2020","2018, 2019, 2020",0,1,0.0,0,0,,,5278.34,0.0,150,41,cuda,nf4
+Answer: 2018, 2019, 2020","2018, 2019, 2020",0,0,0.0,0,1,,,5278.34,0.0,150,41,cuda,nf4
 tatqa-e41cf5e4fafa3f1d4d6f209c28291f34,tatqa,test,0,span,text,mistral7b,base,,42,What does the table show?,"details our restructuring activities as reflected in the Consolidated Statements of Operations for the years ended December 31, 2019, 2018 and 2017","Calculation: The table shows the total assets, total liabilities, and stockholders' equity for the company.
 
 Answer: Total Assets: $10,000,000 ; Total Liabilities: $5,000,000 ; Stockholders' Equity: $5,000,000","Total Assets: $10,000,000 ; Total Liabilities: $5,000,000 ; Stockholders' Equity: $5,000,000",0,0,0.0,0,1,,,8728.13,0.0,143,77,cuda,nf4
@@ -471,7 +471,7 @@ tatqa-08d598ef197ff29cdfbb8f4f23cd0197,tatqa,test,0,arithmetic,table,mistral7b,b
 
 Answer: 12.3%",12.3%,0,0,0.0,0,1,,,5853.76,0.0,159,47,cuda,nf4
 tatqa-4ff4f974448880cf833b3bb7dd01fef9,tatqa,test,0,multi-span,table-text,mistral7b,base,,42,Which years does the table provide information for the company's groups of similar products and services?,2019 ; 2018 ; 2017,"Calculation: Identify the years listed in the table.
-Answer: 2015, 2016, 2017, 2018, 2019, 2020","2015, 2016, 2017, 2018, 2019, 2020",0,1,0.0,0,0,,,6430.09,0.0,156,53,cuda,nf4
+Answer: 2015, 2016, 2017, 2018, 2019, 2020","2015, 2016, 2017, 2018, 2019, 2020",0,0,0.0,0,1,,,6430.09,0.0,156,53,cuda,nf4
 tatqa-7fe35c434c8e1861fa8c6a6cde246d0a,tatqa,test,0,arithmetic,table,mistral7b,base,,42,What is the company's total cost of revenues in 2018 and 2019?,"49,997 thousand","Calculation: Sum of Cost of Revenues for 2018 and 2019 from the income statement.
 
 Answer: 2018: $3,500,000 ; 2019: $4,200,000","2018: $3,500,000 ; 2019: $4,200,000",0,0,0.0,0,1,,,7798.7,0.0,161,67,cuda,nf4
@@ -829,7 +829,7 @@ tatqa-cf42ab5eb0e02d2fa26ecbd6f525fb13,tatqa,test,1,arithmetic,table,mistral7b,b
 Answer: [Value from the calculation]%",[Value from the calculation]%,0,0,0.0,0,1,,,7741.81,0.0,165,66,cuda,nf4
 tatqa-a393d20a410ac6f5dcf0a2e000f20ee3,tatqa,test,1,multi-span,table,mistral7b,base,,42,"In which year was interest income greater than 7,000 thousands?",2019 ; 2018,"Calculation: Find the year where Interest Income is greater than 7,000 thousands in the financial report.
 
-Answer: 2018, 2019, 2020","2018, 2019, 2020",0,1,0.0,0,0,,,6056.08,0.0,153,49,cuda,nf4
+Answer: 2018, 2019, 2020","2018, 2019, 2020",0,0,0.0,0,1,,,6056.08,0.0,153,49,cuda,nf4
 tatqa-b4fe187360f1b3c591ace5616652de34,tatqa,test,1,span,table,mistral7b,base,,42,What was the interest income in 2019?,"7,804 thousand","Calculation: Sum of interest income from all relevant sections in the 2019 financial report.
 Answer: 3.2 million",3.2 million,0,0,0.0,0,1,,,4399.95,0.0,149,32,cuda,nf4
 tatqa-1d568952985d546e1035c7b8311c07cf,tatqa,test,1,arithmetic,table,mistral7b,base,,42,What was the percentage change in non-current assets in Asia Pacific?,68.18%,"Calculation: Subtract the non-current assets value for Asia Pacific in the previous year from the non-current assets value for Asia Pacific in the current year, then divide the result by the non-current assets value for Asia Pacific in the previous year and multiply by 100.
@@ -846,7 +846,7 @@ tatqa-e152392e929647248d77b6d3bf9f285b,tatqa,test,1,multi-span,text,mistral7b,ba
 Answer: United States, United Kingdom, and India.","United States, United Kingdom, and India.",0,0,0.0,0,1,,,4887.25,0.0,153,37,cuda,nf4
 tatqa-55f98f213e0bf08cb4638a6a11395b1f,tatqa,test,1,count,table-text,mistral7b,base,,42,"How many years did adjusted EBITDA exceed $4,000 million?",3,"Calculation: Count the number of years where Adjusted EBITDA is greater than 4000 million.
 
-Answer: 3 ; 5 ; 7",3 ; 5 ; 7,0,1,0.0,0,0,,,5175.69,0.0,154,40,cuda,nf4
+Answer: 3 ; 5 ; 7",3 ; 5 ; 7,0,0,0.0,0,1,,,5175.69,0.0,154,40,cuda,nf4
 tatqa-4d01ba962642e28c284761f7f8edde1e,tatqa,test,1,arithmetic,table-text,mistral7b,base,,42,What is the average software-as-a-service related revenue in 2018 and 2019?,"69,238.5 thousand","Calculation: Add the total SaaS revenue for 2018 and 2019, then divide by 2.
 
 Answer: 12,500,000 (million) ; 13,000,000 (million)","12,500,000 (million) ; 13,000,000 (million)",0,0,0.0,0,1,,,7820.72,0.0,163,67,cuda,nf4
@@ -935,7 +935,7 @@ tatqa-815dfd7619effb3e1e9b4f51c92c72ff,tatqa,test,1,span,table-text,mistral7b,ba
 Answer: 12,345 million dollars.","12,345 million dollars.",0,0,0.0,0,1,,,6776.85,0.0,149,57,cuda,nf4
 tatqa-b2a59da57ce3afdcdf9ff0c3ca6aad02,tatqa,test,1,multi-span,table,mistral7b,base,,42,In which year was Flextronics Technology less than 20.0%?,2018 ; 2017,"Calculation: Find the year where the percentage of Net Sales from the Electronics segment is less than 20.0%.
 
-Answer: 2017, 2018, 2019, 2020","2017, 2018, 2019, 2020",0,1,0.0,0,0,,,6795.63,0.0,156,57,cuda,nf4
+Answer: 2017, 2018, 2019, 2020","2017, 2018, 2019, 2020",0,0,0.0,0,1,,,6795.63,0.0,156,57,cuda,nf4
 tatqa-7d5b1a2ee87959576cb72f841d616f43,tatqa,test,1,arithmetic,table,mistral7b,base,,42,"What is the change in Interest income from, 2019 to 2018?",-721 thousand,"Calculation: Subtract the Interest income for 2018 from the Interest income for 2019.
 
 Answer: [Interest income for 2019] - [Interest income for 2018]",[Interest income for 2019] - [Interest income for 2018],0,0,0.0,0,1,,,6609.78,0.0,158,55,cuda,nf4
@@ -1171,7 +1171,7 @@ tatqa-4b3da5e65da1ec752806e0f145a93544,tatqa,test,2,multi-span,table-text,mistra
 Answer: Common Earnings Per Share, Diluted Earnings Per Share, Basic Earnings Per Share, Fully Diluted Earnings Per Share.","Common Earnings Per Share, Diluted Earnings Per Share, Basic Earnings Per Share, Fully Diluted Earnings Per Share.",0,0,0.4444,0,1,,,7881.29,0.0,153,68,cuda,nf4
 tatqa-dab39e83b38ceedf0797e94847ca2dae,tatqa,test,2,multi-span,table-text,mistral7b,base,,42,"Which years does the table provide information for R&D, sales and marketing, and G&A expenses?",2019 ; 2018 ; 2017,"Calculation: Identify the years listed in the table for R&D, sales and marketing, and G&A expenses.
 
-Answer: 2015, 2016, 2017, 2018, 2019, 2020","2015, 2016, 2017, 2018, 2019, 2020",0,1,0.0,0,0,,,7894.47,0.0,159,68,cuda,nf4
+Answer: 2015, 2016, 2017, 2018, 2019, 2020","2015, 2016, 2017, 2018, 2019, 2020",0,0,0.0,0,1,,,7894.47,0.0,159,68,cuda,nf4
 tatqa-a59a107a777d9d6f276ed0e922c09c04,tatqa,test,2,arithmetic,table,mistral7b,base,,42,What was the average of 40 nanometers?,25.6%,"Calculation: Average = Sum / Count
 Answer: 40 / 2 = 20 nm",40 / 2 = 20 nm,0,0,0.0,0,1,,,3811.64,0.0,149,26,cuda,nf4
 tatqa-4b1be2c26a3f6df52ebb093c1394c219,tatqa,test,2,arithmetic,table,mistral7b,base,,42,What is the increase/ (decrease) in media revenue from 2017 to 2018?,15 million,"Calculation: Media Revenue 2018 - Media Revenue 2017
@@ -1301,7 +1301,7 @@ tatqa-a3561ce26a3d85d3f370b411127c2982,tatqa,test,2,arithmetic,table,mistral7b,b
 Answer: I don't know (without specific numbers from the report)",I don't know (without specific numbers from the report),0,0,0.0,1,0,,,5854.19,0.0,164,47,cuda,nf4
 tatqa-1bc6b763092c4784e530204c229278ca,tatqa,test,2,multi-span,table-text,mistral7b,base,,42,Which years does the table provide information for Income before income taxes?,2019 ; 2018 ; 2017,"Calculation: Identify the years where the heading ""Income before income taxes"" appears in the table.
 
-Answer: 2015, 2016, 2017, 2018, 2019, 2020","2015, 2016, 2017, 2018, 2019, 2020",0,1,0.0,0,0,,,7473.49,0.0,151,64,cuda,nf4
+Answer: 2015, 2016, 2017, 2018, 2019, 2020","2015, 2016, 2017, 2018, 2019, 2020",0,0,0.0,0,1,,,7473.49,0.0,151,64,cuda,nf4
 tatqa-e552fb9aed5420172ab62eb83d04861c,tatqa,test,2,span,text,mistral7b,base,,42,How are debts which are known to be uncollectable written off?,by reducing the carrying amount directly,"Calculation: Write off uncollectable debts by reducing the Accounts Receivable (or Debtors) asset on the balance sheet.
 
 Answer: Write off uncollectable debts by decreasing Accounts Receivable (or Debtors) by the amount of the uncollectable debt.",Write off uncollectable debts by decreasing Accounts Receivable (or Debtors) by the amount of the uncollectable debt.,0,0,0.2,0,1,,,8056.49,0.0,152,70,cuda,nf4
@@ -1369,7 +1369,7 @@ tatqa-bbb46c071300d93b614a99abcf8494b8,tatqa,test,2,span,table-text,mistral7b,ba
 Answer: I don't know (without the specific years and the values from the report).",I don't know (without the specific years and the values from the report).,0,0,0.0,1,0,,,6732.64,0.0,158,56,cuda,nf4
 tatqa-7060efbc982b5a94531e36e6407eb16a,tatqa,test,2,multi-span,table-text,mistral7b,base,,42,For what years is information on earnings per share available?,2018 ; 2019,"Calculation: Identify the years where Earnings Per Share (EPS) data is provided in the financial report.
 
-Answer: 2018, 2019, 2020, 2021","2018, 2019, 2020, 2021",0,1,0.0,0,0,,,6602.26,0.0,148,55,cuda,nf4
+Answer: 2018, 2019, 2020, 2021","2018, 2019, 2020, 2021",0,0,0.0,0,1,,,6602.26,0.0,148,55,cuda,nf4
 tatqa-8a190f8f51d10d291221aa2841e6ab80,tatqa,test,2,multi-span,table,mistral7b,base,,42,What are the respective APRU from off-net in 2017 and 2018 respectively?,"$ 1,239 ; $ 1,155","Calculation: Find the APRU (Average Per-Student Revenue per User) for off-net students in 2017 and 2018 by dividing the total revenue from off-net students by the total number of off-net students in each year.
 
 Answer: 2017: $3,500 ; 2018: $3,700","2017: $3,500 ; 2018: $3,700",0,0,0.0,0,1,,,10252.13,0.0,162,92,cuda,nf4
@@ -1425,7 +1425,7 @@ tatqa-baccb4ff242310c1c0b4dd24743b9ba8,tatqa,test,2,span,text,mistral7b,base,,42
 
 Answer: [Value based on provided net income, preferred dividends, and weighted average number of common shares outstanding]","[Value based on provided net income, preferred dividends, and weighted average number of common shares outstanding]",0,0,0.5625,0,1,,,7356.64,0.0,145,63,cuda,nf4
 tatqa-f25c6a3983e75fdfa418fda4d6a9cbcb,tatqa,test,2,multi-span,table-text,mistral7b,base,,42,Which fiscal years does the table provide information for the price range per share of common stock?,2019 ; 2018,"Calculation: Identify the fiscal years from the table headers.
-Answer: 2018, 2019, 2020, 2021","2018, 2019, 2020, 2021",0,1,0.0,0,0,,,5357.8,0.0,155,42,cuda,nf4
+Answer: 2018, 2019, 2020, 2021","2018, 2019, 2020, 2021",0,0,0.0,0,1,,,5357.8,0.0,155,42,cuda,nf4
 tatqa-55dd9082cf861ffc5c5afe5eb0eef13d,tatqa,test,2,span,text,mistral7b,base,,42,What is the largest cost of revenue item in Adjusted Revenue?,transaction-based costs,"Calculation: Identify the largest cost of revenue item in Adjusted Revenue by comparing each item's percentage of total cost of revenue.
 
 Answer: Cost of goods sold (COGS) ; Freight in ; Depreciation of property, plant, and equipment (PP&E)","Cost of goods sold (COGS) ; Freight in ; Depreciation of property, plant, and equipment (PP&E)",0,0,0.0,0,1,,,7588.23,0.0,152,65,cuda,nf4
@@ -1456,7 +1456,7 @@ tatqa-243d029fde48f37c5b86a605a2fc6f72,tatqa,test,2,span,text,mistral7b,base,,42
 Answer: 30%",30%,0,0,0.2,0,1,,,4774.06,0.0,151,36,cuda,nf4
 tatqa-acb6a7ca79ceb57965a688e9f9bd27ef,tatqa,test,2,multi-span,table-text,mistral7b,base,,42,In which years were components of Teradyne’s deferred tax assets (liabilities) provided?,2019 ; 2018,"Calculation: Examine the cash flow statement and the notes to consolidated financial statements in Teradyne's annual report to find the years when deferred tax assets (liabilities) were created.
 
-Answer: 2016 ; 2017 ; 2018 ; 2019 ; 2020",2016 ; 2017 ; 2018 ; 2019 ; 2020,0,1,0.0,0,0,,,8749.66,0.0,158,77,cuda,nf4
+Answer: 2016 ; 2017 ; 2018 ; 2019 ; 2020",2016 ; 2017 ; 2018 ; 2019 ; 2020,0,0,0.0,0,1,,,8749.66,0.0,158,77,cuda,nf4
 tatqa-8176dee841d69cfef751dd38abceb91a,tatqa,test,2,arithmetic,table,mistral7b,base,,42,What was the change in the amount at 31 December?,-0.3 million,"Calculation: Subtract the amount at 30 June from the amount at 31 December.
 
 Answer: 12,345; 67,890","12,345; 67,890",0,0,0.0,0,1,,,5441.52,0.0,150,43,cuda,nf4

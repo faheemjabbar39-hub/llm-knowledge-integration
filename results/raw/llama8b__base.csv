@@ -923,7 +923,7 @@ tatqa-a28369b222ac578302e90a752aa79977,tatqa,test,1,span,table,llama8b,base,,42,
 Let's assume the data is in the format of year, R&D expenses (in thousands). We need to find the year when R&D expenses were less than 50,000.
 
 Assuming the data is as follows:
-Year 2018, R&D expenses 45,000; Year 2019, R&D expenses 55,000; Year 2020, R&D expenses 48,000; Year 2021, R&D expenses","Year 2018, R&D expenses 45,000; Year 2019, R&D expenses 55,000; Year 2020, R&D expenses 48,000; Year 2021, R&D expenses",0,1,0.0,0,0,,,11066.04,0.0,171,96,cuda,nf4
+Year 2018, R&D expenses 45,000; Year 2019, R&D expenses 55,000; Year 2020, R&D expenses 48,000; Year 2021, R&D expenses","Year 2018, R&D expenses 45,000; Year 2019, R&D expenses 55,000; Year 2020, R&D expenses 48,000; Year 2021, R&D expenses",0,0,0.0,0,1,,,11066.04,0.0,171,96,cuda,nf4
 tatqa-164579cfb048598be735d0e2cda447c4,tatqa,test,1,multi-span,table,llama8b,base,,42,What are the number of shares beneficially owned by Daina Middleton and Wister Walcott respectively?,"36,888 ; 117,031","Calculation: (shares beneficially owned by Daina Middleton) + (shares beneficially owned by Wister Walcott)
 
 Answer: I don't know",I don't know,0,0,0.0,1,0,,,4597.72,0.0,175,32,cuda,nf4
