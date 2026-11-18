@@ -543,3 +543,84 @@ tatqa-2e7d0e6099ef5431e0ce2ca15d0cc9d9,tatqa,test,2,arithmetic,table,qwen7b,cag,
 
 Answer: 55,746","55,746",0,1,0.0,0,0,,,16313.35,0.0,13241,50,cuda,nf4
 tatqa-2a9309359cd15e65d9937f9749279725,tatqa,test,2,span,text,qwen7b,cag,,42,Which model is used for estimating the fair value of SSARs?,Black-Scholes-Merton,Answer: Black-Scholes-Merton option pricing model,Black-Scholes-Merton option pricing model,0,1,0.4,0,0,,,5411.26,0.0,13233,12,cuda,nf4
+tatqa-2a5e18dce07cdb6d6cd8e1daaab74018,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What is the increase / (decrease) in 28 nanometers from 2018 to 2019?,-1.3%,"Calculation: 28 nanometers in 2019 - 28 nanometers in 2018 = 11.3 - 12.6 = -1.3
+
+Answer: -1.3",-1.3,0,1,0.0,0,0,,,16682.0,0.0,13247,51,cuda,nf4
+tatqa-cab19a7970ec3ecb2c0af25d6cfbca30,tatqa,test,2,arithmetic,table-text,qwen7b,cag,,42,What is the percentage change of past due but not impaired receivable that is over 2 months overdue from 2018 to 2019?,2.84%,"Calculation: (2756 - 2680) / 2680 * 100%
+
+Answer: 2.7%",2.7%,0,0,0.0,0,1,,,11979.72,0.0,13252,35,cuda,nf4
+tatqa-715c9dd9b0dc4720ea3ba7ad4e436ee8,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What was the change in the amount for contracts within one year?,2.8 million,"Calculation: 2019 amount - 2018 amount = 18.3 - 15.5 = 2.8 million
+
+Answer: 2.8 million",2.8 million,1,1,1.0,0,0,,,14284.15,0.0,13232,43,cuda,nf4
+tatqa-2e9c9c0802108074fb0a3ba6dd007dca,tatqa,test,2,span,text,qwen7b,cag,,42,Where are the government grants included within?,trade and other payables,Answer: trade and other payables,trade and other payables,1,1,1.0,0,0,,,4222.73,0.0,13227,8,cuda,nf4
+tatqa-b6b9d21c799743ac0c5566a4601a093d,tatqa,test,2,span,table-text,qwen7b,cag,,42,How much did sales and marketing expenses increase by for year ended 2019 compared to year ended 2018?,$122.8 million,"Calculation: 472,841 - 350,069 = 122,772
+Answer: 122,772 thousand","122,772 thousand",0,1,0.0,0,0,,,14017.56,0.0,13246,42,cuda,nf4
+tatqa-be2b51c08942a5b64c2eaf8ce9db2e92,tatqa,test,2,span,table-text,qwen7b,cag,,42,What was the domestic income before income taxes in 2019?,"22,330 thousand","Answer: 22,330","22,330",0,1,0.0,0,0,,,4808.78,0.0,13234,10,cuda,nf4
+tatqa-673e25d5bd4f7621100c6946fc4a6aab,tatqa,test,2,span,table-text,qwen7b,cag,,42,What does the company's investment commitments represent?,Represents the maximum funding that would be expected under existing investment agreements with privately-held companies,Answer: the maximum funding that would be expected under existing investment agreements with privately-held companies.,the maximum funding that would be expected under existing investment agreements with privately-held companies.,0,0,0.963,0,1,,,7309.76,0.0,13228,19,cuda,nf4
+tatqa-cd9813f053d0a67b0bef4911eb10d61e,tatqa,test,2,multi-span,table,qwen7b,cag,,42,What are the types of past due but not impaired receivables?,0 to 1 month overdue ; 1 to 2 months overdue ; Over 2 months overdue,Answer: 0 to 1 month overdue ; 1 to 2 months overdue ; Over 2 months overdue,0 to 1 month overdue ; 1 to 2 months overdue ; Over 2 months overdue,1,1,1.0,0,0,,,8815.37,0.0,13233,24,cuda,nf4
+tatqa-cd829f7a1d9f9794b89ff98c3abc5f3a,tatqa,test,2,span,text,qwen7b,cag,,42,What is the content of Note 5?,"PROPERTY AND EQUIPMENT, NET",Answer: I don't know,I don't know,0,0,0.0,1,0,,,3861.68,0.0,13228,7,cuda,nf4
+tatqa-81d29981f1dc165d704bfa76e41dd944,tatqa,test,2,count,table-text,qwen7b,cag,,42,How many years did the Weighted-average interest rate exceed 3%?,2,"Calculation: Count the number of years where the Weighted-average interest rate is > 3%
+Answer: 1",1,0,0,0.0,0,1,,,9046.64,0.0,13234,25,cuda,nf4
+tatqa-bb136afdcf735df09b34e1bec306ab17,tatqa,test,2,multi-span,table-text,qwen7b,cag,,42,In which years were the share-based payments for the Share Incentive Plan ('SIP') accounted for?,2019 ; 2018,Answer: 2019 ; 2018,2019 ; 2018,1,1,1.0,0,0,,,5993.63,0.0,13241,14,cuda,nf4
+tatqa-e84ddc532bbe469b2f4a37e34ee3c695,tatqa,test,2,arithmetic,table-text,qwen7b,cag,,42,What is the percentage change in total past due but not impaired receivables from 2018 to 2019?,35.25%,"Calculation: (9319 - 6890) / 6890 * 100
+
+Answer: 35.2%",35.2%,0,1,0.0,0,0,,,12312.36,0.0,13247,36,cuda,nf4
+tatqa-b5572f9f8b64c1e860b7c4dcdcf272de,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What was the change in personnel expenses in 2018/2019 from 2017/2018?,91 million,"Calculation: 2816 - 2725 = 91
+Answer: 91",91,0,1,0.0,0,0,,,9142.81,0.0,13249,25,cuda,nf4
+tatqa-9301b5f98c68d52449ce4f19f25875b2,tatqa,test,2,span,table,qwen7b,cag,,42,"Between year ended 2017 and 2018, which year had a higher sales and marketing expense?",2018,"Calculation: Compare 225,694 (2017) and 350,069 (2018) from the sales and marketing expense table.
+Answer: 2018",2018,1,1,1.0,0,0,,,16054.56,0.0,13244,49,cuda,nf4
+tatqa-2df5086d76d9cb82d007d208a95e03bf,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What was the percentage change in personnel expenses in 2018/2019 from 2017/2018?,3.34%,"Calculation: (2816 - 2725) / 2725 * 100
+Answer: 3.3%",3.3%,0,0,0.0,0,1,,,12019.0,0.0,13250,35,cuda,nf4
+tatqa-4fc65686f0b4b8de1582111c40b7bdc8,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What was the percentage change in Current deferred income?,-3.62%,"Calculation: (53.2 - 55.2) / 55.2 * 100
+Answer: -3.6%",-3.6%,0,0,0.0,0,1,,,11957.54,0.0,13229,35,cuda,nf4
+tatqa-289bdce2c5dd3590e603660591eb9afd,tatqa,test,2,span,table,qwen7b,cag,,42,What was the risk free interest rate in 2018?,1.74%-1.94%,Answer: 1.74%-1.94%,1.74%-1.94%,1,1,1.0,0,0,,,5980.82,0.0,13233,14,cuda,nf4
+tatqa-e6c8eef8ea37699e9d8c1f6b5f50b451,tatqa,test,2,count,table,qwen7b,cag,,42,"In 2019, how many quarters did the high share price exceed $85.00?",1,"Calculation: Count the quarters where the high share price is > $85.00
+Answer: 3",3,0,0,0.0,0,1,,,9128.99,0.0,13242,25,cuda,nf4
+tatqa-239ac320bf2943193d8bcf13605d6319,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What is the percentage constitution of the prior year special in the total dividends paid during the period of 2019?,9.52%,Answer: 10%,10%,0,0,0.0,0,1,,,3963.34,0.0,13244,7,cuda,nf4
+tatqa-cb65dace46d1ebab18915135849b9eb6,tatqa,test,2,span,table,qwen7b,cag,,42,In which year was the amount of personnel expenses larger?,2018/2019,Answer: 2018 ;,2018 ;,0,0,0.0,0,1,,,4463.96,0.0,13230,9,cuda,nf4
+tatqa-045c3cfba83ab2777a26f8569e8be15d,tatqa,test,2,span,text,qwen7b,cag,,42,What was the amount of  expenses for long-term remuneration components in FY2019?,€7 million,Answer: 7 million,7 million,1,1,1.0,0,0,,,3638.43,0.0,13240,6,cuda,nf4
+tatqa-544a8b8b0d243e3d3e5c6199ccf968df,tatqa,test,2,span,text,qwen7b,cag,,42,When is Common Share equivalents are excluded from the computation of diluted earnings per share excluded?,if their effect is anti-dilutive,Answer: if their effect is anti-dilutive,if their effect is anti-dilutive,1,1,1.0,0,0,,,5094.57,0.0,13236,11,cuda,nf4
+tatqa-f15999bcda751371eeb89a7a17122509,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What is the percentage change of adjusted revenue from 2016 to 2017?,43.31%,"Calculation: (983963 - 686618) / 686618 * 100
+Answer: 43.1%",43.1%,0,1,0.0,0,0,,,14013.54,0.0,13240,42,cuda,nf4
+tatqa-f55ccd949b0a3dd30fbc4839cbafaf59,tatqa,test,2,multi-span,table,qwen7b,cag,,42,"What are the components of total contractual obligations that are more than 100,000?",Accounts payable ; Accrued expenses and other payables ; Purchase commitments to suppliers,"Calculation: Identify components of total contractual obligations exceeding 100,000 from the given table.
+Answer: Lease liabilities ; Pension liabilities",Lease liabilities ; Pension liabilities,0,0,0.0,0,1,,,10858.74,0.0,13240,31,cuda,nf4
+tatqa-fa64104d2b254454e60202e0c24ff9dc,tatqa,test,2,span,text,qwen7b,cag,,42,How is deferred income recognised for contracts that exceed one year?,deferred income that relates to unsatisfied or partially satisfied performance obligations at year end is expected to be recognised as revenue in the future,Answer: The Group applies the practical expedient in paragraph 121 of IFRS 15 and does not disclose information about remaining performance obligations that have original expected durations of one year or less. ;,The Group applies the practical expedient in paragraph 121 of IFRS 15 and does not disclose information about remaining performance obligations that have original expected durations of one year or less. ;,0,0,0.2692,0,1,,,14590.34,0.0,13231,44,cuda,nf4
+tatqa-ed557028792b3e52054bd998ebebb6f2,tatqa,test,2,span,table,qwen7b,cag,,42,What is the component that has the highest obligation for the company in 1-5 years?,Lease liabilities,"Calculation: Identify the highest value in the ""1-5 years"" column of the contractual obligations table.
+Answer: Lease liabilities ; Purchase obligations: purchase commitments to suppliers",Lease liabilities ; Purchase obligations: purchase commitments to suppliers,0,1,0.4,0,0,,,11975.25,0.0,13238,35,cuda,nf4
+tatqa-b1243c500ece480b14ddd985a4a37964,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What is the stock fluctuation between high and low in the first quarter of fiscal year 2019?,0.18,"Calculation: 0.29 - 0.11
+Answer: 0.18",0.18,1,1,1.0,0,0,,,8532.99,0.0,13242,23,cuda,nf4
+tatqa-885f1bfaa095ac6a9776b2805cc818d0,tatqa,test,2,span,text,qwen7b,cag,,42,How much additional rental revenue was contributed by the refranchising strategy in 2019?,$12.4 million,"Calculation: 2019 franchise rental revenues - (2018 franchise rental revenues + 2018 franchise rental revenues * 5.3%)
+Answer: 12.4 million",12.4 million,1,1,1.0,0,0,,,14860.95,0.0,13239,45,cuda,nf4
+tatqa-f83d005780a68744c7f63f815eac1141,tatqa,test,2,span,table-text,qwen7b,cag,,42,What was the total income in 2017?,"2,596 thousand","Answer: 2,214,253 thousand","2,214,253 thousand",0,0,0.0,0,1,,,5965.35,0.0,13231,14,cuda,nf4
+tatqa-06b7c932aca209bc195ef9c2f6b8abb0,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What is the increase/ (decrease) in wireless revenue from 2017 to 2018?,631 million,"Calculation: 9200 - 8569
+Answer: 631",631,0,1,0.0,0,0,,,8275.14,0.0,13244,22,cuda,nf4
+tatqa-85c42a1ed88df0e05df0ac790c2a6da7,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What is the difference of Basic earnings per share attributable to OpenText for fiscal year 2019 and 2018?,0.15,"Calculation: 1.06 - 0.91
+Answer: 0.15",0.15,1,1,1.0,0,0,,,8572.25,0.0,13247,23,cuda,nf4
+tatqa-e71b376c3a02d9ba8c967a19255f4bb7,tatqa,test,2,span,table,qwen7b,cag,,42,What was the low price per share in the third quarter of 2018?,43.24,Answer: 0.13,0.13,0,0,0.0,0,1,,,4262.86,0.0,13237,8,cuda,nf4
+tatqa-2fae1345b377e6f00514a98a1c15b5f2,tatqa,test,2,span,text,qwen7b,cag,,42,"What is the closing price in March, 2020",$0.22,Answer: 0.22,0.22,1,1,1.0,0,0,,,4180.73,0.0,13232,8,cuda,nf4
+tatqa-112ca174c6f821d3b4df1c9e5f430757,tatqa,test,2,span,table,qwen7b,cag,,42,What is the total amount of deferred income in 2019?,66.8 million,Answer: 66.8 million,66.8 million,1,1,1.0,0,0,,,4540.39,0.0,13234,9,cuda,nf4
+tatqa-87d7822a5ae27b4aaaf3cbaef007bc72,tatqa,test,2,span,table,qwen7b,cag,,42,In which year were the PSP payments for the Group larger?,2019,Answer: 2019,2019,1,1,1.0,0,0,,,4227.96,0.0,13231,8,cuda,nf4
+tatqa-a0e58bcedbc82076f12bdbef7c585f7a,tatqa,test,2,multi-span,table,qwen7b,cag,,42,What factors are taken into account to calculate the adjusted revenue?,Starbucks transaction-based revenue ; transaction-based costs ; bitcoin costs ; deferred revenue adjustment related to purchase accounting,Answer: Net of transaction-based costs; net of bitcoin costs; add: deferred revenue adjustment related to purchase accounting,Net of transaction-based costs; net of bitcoin costs; add: deferred revenue adjustment related to purchase accounting,0,0,0.7333,0,1,,,8519.53,0.0,13231,23,cuda,nf4
+tatqa-df692a73e5e0c9b156b495a34ace95bf,tatqa,test,2,multi-span,table-text,qwen7b,cag,,42,What variables are considered on top of the value at 1 January when calculating the value at 31 December for government grants that are included within trade and other payables?,Received during the year ; Released to the income statement,Answer: Received during the year ; Released to the income statement,Received during the year ; Released to the income statement,1,1,1.0,0,0,,,5693.96,0.0,13254,13,cuda,nf4
+tatqa-c5412d032b7a6c5f8ccfa4c8a0a1b87b,tatqa,test,2,span,table-text,qwen7b,cag,,42,What was the total credit facility in 2019?,"300,000 thousand","Answer: $300,000","$300,000",0,1,0.0,0,0,,,5051.95,0.0,13232,11,cuda,nf4
+tatqa-3e95ce02cee8705baa3929045190803c,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What was the the percentage change in the high price per share in the second quarter between 2018 and 2019?,95.13%,"Calculation: (28 / 13 - 1) * 100
+Answer: 115.38%",115.38%,0,0,0.0,0,1,,,10858.1,0.0,13248,31,cuda,nf4
+tatqa-5b8b422ea976902a5f10dbb8bb17179e,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What is the value of the company's 2023-2024 purchase obligations as a percentage of its total payment due in the 2023-2024 period?,2.18%,"Calculation: 19683 / 77095 * 100
+
+Answer: 25.5%",25.5%,0,0,0.0,0,1,,,10869.02,0.0,13261,31,cuda,nf4
+tatqa-30971c97bde0b00c35bc356eac854635,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What was the change in the Weighted average number of shares outstanding incl. dilutive effect of share options from 2018 to 2019?,0.9 million,"Calculation: 74.0 - 73.1
+Answer: 0.9",0.9,0,1,0.0,0,0,,,8285.19,0.0,13253,22,cuda,nf4
+tatqa-db37a80a5b1051c6b2514afbd1dc2525,tatqa,test,2,multi-span,table-text,qwen7b,cag,,42,What are the different contract lengths whereby revenue will be recognised by the Group when it satisfies the remaining performance obligations in the contracts?,Within one year ; Greater than one year,Answer: 1 year or less ; more than 1 year,1 year or less ; more than 1 year,0,0,0.4,0,1,,,5996.39,0.0,13244,14,cuda,nf4
+tatqa-2d073db9bcc59c9e9a3f32106033ba2c,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What was the percentage change in the Standby letters of credit between 2018 and 2019?,-7.22%,"Calculation: (1940 - 1800) / 1800 * 100 = 7.78%
+
+Answer: 7.8%",7.8%,0,0,0.0,0,1,,,13747.36,0.0,13244,41,cuda,nf4
+tatqa-c956f669217094b1f80487536036ec93,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What was the percentage change in prepaid taxes from 2018 to 2019?,-16.59%,"Calculation: (8046 - 9646) / 9646 * 100
+Answer: -16.4%",-16.4%,0,0,0.0,0,1,,,12307.39,0.0,13240,36,cuda,nf4
+tatqa-cf774f6bcde2d8681b99b375c9902ec3,tatqa,test,2,span,text,qwen7b,cag,,42,In which year were the 65-nanometer technology introduced by the company?,2011,Answer: 2006,2006,0,0,0.0,0,1,,,4261.65,0.0,13236,8,cuda,nf4
+tatqa-d633fb7c75f19f95fc12d94db81cfd18,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What is the Effect of dilutive securities expressed as a percentage of Excluded as anti-dilutive for fiscal year 2019?,40.74%,"Calculation: (1,124 / 2,759) * 100
+Answer: 40.8%",40.8%,0,1,0.0,0,0,,,11146.48,0.0,13248,32,cuda,nf4
+tatqa-12706693199fd774f07989b1362d92ea,tatqa,test,2,multi-span,text,qwen7b,cag,,42,Why was there a reduction in property and equipment in 2018 and 2019?,relocation of our corporate headquarters ; closure of our Lake Mary facility in 2018,Answer: I don't know,I don't know,0,0,0.0,1,0,,,3978.85,0.0,13241,7,cuda,nf4
+tatqa-bc57a08a2813a696a71e9417fe454052,tatqa,test,2,span,table,qwen7b,cag,,42,In which year was Other larger?,2019,Answer: 2019,2019,1,1,1.0,0,0,,,4196.44,0.0,13226,8,cuda,nf4
+tatqa-4ff6daa82c801aec0ba99bc66c830bc6,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What was the percentage change in the Weighted average number of shares outstanding incl. dilutive effect of share options from 2018 to 2019?,1.23%,"Calculation: (74.0 - 73.1) / 73.1 * 100
+Answer: 1.2%",1.2%,0,0,0.0,0,1,,,12010.49,0.0,13254,35,cuda,nf4
+tatqa-fdf9d0686f654620bfba01887a19d482,tatqa,test,2,span,table,qwen7b,cag,,42,What was the  Tax credits in 2019?,"$79,480 thousand","Answer: 79,480 thousand","79,480 thousand",1,1,1.0,0,0,,,5034.99,0.0,13232,11,cuda,nf4
