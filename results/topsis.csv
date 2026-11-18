@@ -1,0 +1,17 @@
+model,profile,condition,closeness,rank,share_ranked_first_when_weights_change
+llama8b,compliance,cag,0.6711,1,0.68
+llama8b,compliance,rag,0.6685,2,0.32
+llama8b,compliance,base,0.3368,3,0.0
+llama8b,high_volume,base,0.5586,1,0.78
+llama8b,high_volume,cag,0.5013,2,0.22
+llama8b,high_volume,rag,0.4451,3,0.0
+mistral7b,compliance,rag,0.7108,1,1.0
+mistral7b,compliance,cag,0.7027,2,0.0
+mistral7b,compliance,base,0.2882,3,0.0
+mistral7b,high_volume,base,0.5532,1,0.945
+mistral7b,high_volume,rag,0.4497,2,0.055
+mistral7b,high_volume,cag,0.4428,3,0.0
+qwen7b,compliance,base,0.507,1,0.54
+qwen7b,compliance,cag,0.493,2,0.46
+qwen7b,high_volume,base,0.6044,1,1.0
+qwen7b,high_volume,cag,0.3956,2,0.0
