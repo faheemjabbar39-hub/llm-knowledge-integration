@@ -782,3 +782,10 @@ Answer: 1.14",1.14,0,0,0.0,0,1,,,11417.95,0.0,13239,33,cuda,nf4
 tatqa-109554b000f2e51b7bbb7d4f85dca24a,tatqa,test,2,arithmetic,table-text,qwen7b,cag,,42,What was the percentage change in the total expenses between 2017 and 2018?,2.8%,Answer: I don't know,I don't know,0,0,0.0,1,0,,,3984.73,0.0,13241,7,cuda,nf4
 tatqa-1eefb8a6e023d742f3afec9d7fe47974,tatqa,test,2,span,text,qwen7b,cag,,42,Why have RSUs been omitted when calculating diluted earnings per share for 2018 and 2017?,RSUs have been omitted as they are out-of-the-money and thus anti-dilutive,RSUs have been omitted as they are out-of-the-money and thus anti-dilutive.,RSUs have been omitted as they are out-of-the-money and thus anti-dilutive.,1,1,1.0,0,0,,,7720.19,0.0,13244,20,cuda,nf4
 tatqa-243d029fde48f37c5b86a605a2fc6f72,tatqa,test,2,span,text,qwen7b,cag,,42,What is the tax rate that all dividends are franked at?,All dividends are fully franked at a 30% tax rate.,Answer: 30%,30%,0,0,0.2,0,1,,,3877.35,0.0,13232,7,cuda,nf4
+tatqa-acb6a7ca79ceb57965a688e9f9bd27ef,tatqa,test,2,multi-span,table-text,qwen7b,cag,,42,In which years were components of Teradyne’s deferred tax assets (liabilities) provided?,2019 ; 2018,2019 ; 2018,2019 ; 2018,1,1,1.0,0,0,,,5088.66,0.0,13238,11,cuda,nf4
+tatqa-8176dee841d69cfef751dd38abceb91a,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What was the change in the amount at 31 December?,-0.3 million,Answer: 2.0 ;,2.0 ;,0,0,0.0,0,1,,,4138.28,0.0,13232,8,cuda,nf4
+tatqa-586b24199ab25b1747ae3573492f1ccb,tatqa,test,2,arithmetic,table,qwen7b,cag,,42,What was the increase / (decrease) in the Weighted average grant date fair value from 2018 to 2019?,1.36,"Calculation: 4.72 - 3.36
+Answer: 1.36",1.36,1,1,1.0,0,0,,,8569.99,0.0,13250,23,cuda,nf4
+tatqa-6528bb53e7b8630025ad32fe46dfe68a,tatqa,test,2,span,text,qwen7b,cag,,42,What is the Total short-term lines of credit at the end of 2019?,€150 million,"Calculation: €150 million at December 31, 2019.
+
+Answer: €150 million",€150 million,1,1,1.0,0,0,,,10013.67,0.0,13238,28,cuda,nf4
