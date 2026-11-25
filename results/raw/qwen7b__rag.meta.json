@@ -1,0 +1,20 @@
+{
+  "model": "qwen7b",
+  "hf_id": "Qwen/Qwen2.5-7B-Instruct",
+  "strategy": "rag",
+  "tag": "",
+  "split": "test",
+  "device": "cuda",
+  "quant": "nf4",
+  "max_new_tokens": 96,
+  "uses_documents": true,
+  "top_k": 3,
+  "retriever": "dense",
+  "adapter": null,
+  "n_items_this_run": 504,
+  "wall_clock_s": 8346.0,
+  "peak_gpu_gb": 9.953,
+  "setup": {
+    "index_build_s": 24.91
+  }
+}
