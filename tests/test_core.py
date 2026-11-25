@@ -11,6 +11,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import pytest
+import torch
 
 from kis.metrics import exact_match, normalize
 from kis.prompts import build_user_message, docs_prefix, question_suffix, target_text
@@ -212,7 +213,7 @@ def test_pipeline_base_rag_cag_and_resume(tiny, tmp_path, monkeypatch):
 
 
 def test_qlora_examples_train_only_on_the_reply(tiny):
-    from kis.qlora import add_lora, build_examples, train
+    from kis.qlora import add_lora, build_examples, prepare_for_training, train
     model, tok = tiny
     contexts = _contexts()
     items = _items(contexts)
@@ -224,8 +225,24 @@ def test_qlora_examples_train_only_on_the_reply(tiny):
     assert contexts[0]["text"][:40] in tok.decode(ex["input_ids"][:n_prompt])  # the gold extract is in the prompt
     from tiny import tiny_model_and_tokenizer
     fresh, _ = tiny_model_and_tokenizer(seed=1)
-    log = train(add_lora(fresh, 4, 8, 0.0, ["q_proj", "v_proj"]), examples, epochs=4, lr=1e-2, grad_accum=2, log_every=1000)
+    log = train(add_lora(prepare_for_training(fresh), 4, 8, 0.0, ["q_proj", "v_proj"]), examples, epochs=4, lr=1e-2,
+                grad_accum=2, log_every=1000)
     assert log["loss_end"] < log["loss_start"]
+
+
+def test_reply_loss_matches_the_full_loss(tiny):
+    """Scoring only the reply positions (to save GPU memory) gives the same loss as the full calculation."""
+    from kis.qlora import _reply_loss, build_examples
+    model, tok = tiny
+    contexts = _contexts()
+    examples, _ = build_examples(tok, _items(contexts), contexts, n_docs=3, max_len=4000, seed=1)
+    ex = examples[0]
+    ids, labels = torch.tensor([ex["input_ids"]]), torch.tensor([ex["labels"]])
+    n_target = int((labels != -100).sum())
+    with torch.no_grad():
+        full = model(input_ids=ids, labels=labels).loss
+        reply = _reply_loss(model, ids, n_target)
+    assert torch.allclose(full, reply, atol=1e-5)
 
 
 # ------------------------------------------------------------------ statistics and TOPSIS

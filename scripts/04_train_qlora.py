@@ -12,12 +12,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")   # less memory lost to fragments
 
 import torch
 
 from kis.autosave import autosave
 from kis.common import PROCESSED, ROOT, load_config, read_jsonl, set_seed
-from kis.qlora import add_lora, build_examples, train
+from kis.qlora import add_lora, build_examples, prepare_for_training, train, training_dtype
 
 
 def main():
@@ -39,7 +42,6 @@ def main():
     if not torch.cuda.is_available():
         raise SystemExit("QLoRA needs an NVIDIA GPU. In Colab: Runtime -> Change runtime type -> T4 GPU.")
 
-    from peft import prepare_model_for_kbit_training
     from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
     set_seed(seed)
@@ -54,20 +56,22 @@ def main():
     examples, stats = build_examples(tok, items, contexts, cfg["rag"]["top_k"], q["max_len"], seed)
     print(f"training examples: {stats}")
 
+    dtype = training_dtype()                            # float16 on a T4, bfloat16 on newer GPUs
+    print(f"training precision: {str(dtype).replace('torch.', '')}")
     model = AutoModelForCausalLM.from_pretrained(
-        hf_id, device_map="auto",
+        hf_id, device_map="auto", dtype=dtype,
         quantization_config=BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
                                                bnb_4bit_use_double_quant=True,
-                                               bnb_4bit_compute_dtype=torch.bfloat16))
-    model = prepare_model_for_kbit_training(model)      # also turns on gradient checkpointing
+                                               bnb_4bit_compute_dtype=dtype))
+    model = prepare_for_training(model)                 # freezes the model, gradient checkpointing
     model = add_lora(model, rank, q["alpha"], q["dropout"], q["target_modules"])
     model.print_trainable_parameters()
 
     torch.cuda.reset_peak_memory_stats()
-    log = train(model, examples, q["epochs"], q["learning_rate"], seed=seed, autocast_dtype=torch.bfloat16)
+    log = train(model, examples, q["epochs"], q["learning_rate"], seed=seed, autocast_dtype=dtype)
     model.save_pretrained(out)
     meta = {"model": args.model, "hf_id": hf_id, "rank": rank, "alpha": q["alpha"], "seed": seed,
-            "examples": stats, **log, "peak_gpu_gb": round(torch.cuda.max_memory_allocated() / 1e9, 3)}
+            "examples": stats, **log, "precision": str(dtype).replace("torch.", ""), "peak_gpu_gb": round(torch.cuda.max_memory_allocated() / 1e9, 3)}
     (out / "train_meta.json").write_text(json.dumps(meta, indent=2))
     print(json.dumps(meta, indent=2))
     print(f"adapter saved to {out}")

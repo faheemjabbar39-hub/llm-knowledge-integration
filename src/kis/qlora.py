@@ -42,6 +42,44 @@ def build_examples(tok, items: list[dict], contexts: list[dict], n_docs: int, ma
     return examples, stats
 
 
+def prepare_for_training(model):
+    """Freeze the base model and turn on gradient checkpointing, WITHOUT the float32 copies.
+
+    peft's prepare_model_for_kbit_training converts every non-4-bit weight (embeddings, output
+    layer, norms) to float32. For Llama-3.1-8B that alone adds about 2 GB of GPU memory, which
+    is what ran a 16 GB T4 out of memory. Here those weights keep their 16-bit type.
+    """
+    for p in model.parameters():
+        p.requires_grad_(False)
+    model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+    model.enable_input_require_grads()
+    model.config.use_cache = False
+    return model
+
+
+def training_dtype():
+    """bfloat16 on GPUs that support it natively (A100, L4 ...); float16 on a T4, which has no
+    bfloat16 hardware (emulated bfloat16 there is slow)."""
+    try:
+        native = torch.cuda.is_bf16_supported(including_emulation=False)
+    except TypeError:                       # older torch
+        native = torch.cuda.get_device_capability()[0] >= 8
+    return torch.bfloat16 if native else torch.float16
+
+
+def _reply_loss(model, ids: torch.Tensor, n_target: int) -> torch.Tensor:
+    """Loss on the reply only. The reply is at the end of the example, so only the last
+    n_target + 1 positions need output scores: the model is asked for just those
+    (logits_to_keep) instead of a 128,000-word score table for every prompt token."""
+    try:
+        logits = model(input_ids=ids, logits_to_keep=n_target + 1, use_cache=False).logits
+    except TypeError:                       # transformers without logits_to_keep
+        logits = model(input_ids=ids, use_cache=False).logits[:, -(n_target + 1):]
+    logits = logits[:, :-1].float()          # position t predicts token t + 1
+    target = ids[:, -n_target:]
+    return torch.nn.functional.cross_entropy(logits.reshape(-1, logits.size(-1)), target.reshape(-1))
+
+
 def add_lora(model, rank: int, alpha: int, dropout: float, target_modules: list[str]):
     from peft import LoraConfig, get_peft_model
     return get_peft_model(model, LoraConfig(r=rank, lora_alpha=alpha, lora_dropout=dropout,
@@ -62,6 +100,8 @@ def train(model, examples: list[dict], epochs: float = 1, lr: float = 2e-4, grad
         opt, lambda u: (u + 1) / warmup if u < warmup
         else 0.5 * (1 + math.cos(math.pi * (u - warmup) / max(1, n_updates - warmup))))
     device = next(model.parameters()).device
+    # float16 needs loss scaling so small gradients do not round to zero; it is a no-op otherwise
+    scaler = torch.amp.GradScaler(device.type, enabled=autocast_dtype == torch.float16)
     model.train()
     order, losses, t0 = [], [], time.time()
     while len(order) < n_steps:
@@ -71,17 +111,19 @@ def train(model, examples: list[dict], epochs: float = 1, lr: float = 2e-4, grad
     for step, idx in enumerate(order[:n_steps], 1):
         ex = examples[idx]
         ids = torch.tensor([ex["input_ids"]], device=device)
-        labels = torch.tensor([ex["labels"]], device=device)
+        n_target = sum(label != -100 for label in ex["labels"])
         with torch.autocast(device_type=device.type, dtype=autocast_dtype, enabled=autocast_dtype is not None):
-            loss = model(input_ids=ids, labels=labels).loss
-        (loss / grad_accum).backward()
+            loss = _reply_loss(model, ids, n_target)
+        scaler.scale(loss / grad_accum).backward()
         losses.append(loss.item())
         if step % grad_accum == 0 or step == n_steps:
+            scaler.unscale_(opt)
             torch.nn.utils.clip_grad_norm_(params, 1.0)
-            opt.step()
+            scaler.step(opt)
+            scaler.update()
             sched.step()
             opt.zero_grad(set_to_none=True)
-        if step % log_every == 0 or step == n_steps:
+        if step % log_every == 0 or step in (1, 5) or step == n_steps:   # early lines show it is running
             recent = sum(losses[-log_every:]) / len(losses[-log_every:])
             mins = (time.time() - t0) / 60
             print(f"  step {step}/{n_steps}  loss {recent:.3f}  {mins:.1f} min elapsed, "
