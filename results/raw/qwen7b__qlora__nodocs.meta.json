@@ -1,0 +1,20 @@
+{
+  "model": "qwen7b",
+  "hf_id": "Qwen/Qwen2.5-7B-Instruct",
+  "strategy": "qlora",
+  "tag": "nodocs",
+  "split": "test",
+  "device": "cuda",
+  "quant": "nf4",
+  "max_new_tokens": 96,
+  "uses_documents": false,
+  "top_k": null,
+  "retriever": null,
+  "adapter": "adapters/qwen7b_r16_s42",
+  "n_items_this_run": 504,
+  "wall_clock_s": 1248.6,
+  "peak_gpu_gb": 5.766,
+  "setup": {
+    "qlora_train_s": 8231.1
+  }
+}
