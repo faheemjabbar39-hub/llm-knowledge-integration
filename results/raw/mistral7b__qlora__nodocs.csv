@@ -1,0 +1,48 @@
+item_id,dataset,split,block,answer_type,answer_from,model,strategy,tag,seed,question,gold,prediction,final_answer,correct,contains,f1,abstained,hallucinated,retrieval_hit,retrieved,latency_ms,retrieval_ms,prompt_tokens,output_tokens,device,quant
+tatqa-ae10d06f4a7b08fdc13138ec794ee3c5,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,"What is the change in the average total bookings between 2017-2018, and 2018-2019?",391.5 million,"Calculation: (2018-2019)/(2017-2018)
+Answer: 0.02",0.02,0,0,0.0,0,1,,,4808.04,0.0,171,36,cuda,nf4
+tatqa-3cea178348fe377730a22ebb5e76639b,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,What was the increase / (decrease) in the Cash flow from operating activities from 2018 to 2019?,"247,963 thousand","Calculation: 1,234,567 - 1,123,456
+Answer: 111,111","111,111",0,0,0.0,0,1,,,4641.93,0.0,167,38,cuda,nf4
+tatqa-4478c71ff25482f914636301d4c2413a,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,What is the change in Other intangible assets Amortisation 2018 to 2019?,"-4,606 thousand","Calculation: 1,234-1,000
+Answer: 234 thousand",234 thousand,0,0,0.0,0,1,,,3561.94,0.0,162,26,cuda,nf4
+tatqa-d0d8fe57408f27afe6def3c382fec946,tatqa,test,0,multi-span,table-text,mistral7b,qlora,nodocs,42,What are the types of activity involving restricted stock and restricted stock unit awards?,Granted ; Vested ; Forfeited,Answer: Grants ; Vesting ; Settlement ; Cancellation ; Forfeiture,Grants ; Vesting ; Settlement ; Cancellation ; Forfeiture,0,0,0.0,0,1,,,3137.52,0.0,152,21,cuda,nf4
+tatqa-03b8194d47511d07e1e1aa58aa721957,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,What is the change in Disposals during the year from 2018 to 2019?,"-3,439 thousand","Calculation: 1,234-1,000
+Answer: 234 million",234 million,0,0,0.0,0,1,,,3643.75,0.0,161,26,cuda,nf4
+tatqa-c447c5ff9ca6cfb0b23f273af3ac9a27,tatqa,test,0,span,table,mistral7b,qlora,nodocs,42,"What was the percentage change in Cash and cash equivalents, beginning of the year from 2018 to 2019?",(59.9)%,"Calculation: (1,234,000-1,000,000)/1,000,000
+Answer: 23.4%",23.4%,0,0,0.0,0,1,,,5511.85,0.0,166,45,cuda,nf4
+tatqa-a5630fb720e7fd29b9c13dada96e796e,tatqa,test,0,span,text,mistral7b,qlora,nodocs,42,"What is the value of the company's marketable securities as of December 31, 2019?","As of December 31, 2019, the Company did not hold any marketable securities.","Answer: 1,234 thousand","1,234 thousand",0,0,0.0,0,1,,,2229.07,0.0,163,10,cuda,nf4
+tatqa-5cc816fb068ed315c1c983354e75ea38,tatqa,test,0,multi-span,text,mistral7b,qlora,nodocs,42,What are the increase in revenue from subscription and returns as well as from professional service between 2017 and 2018?,$54.1 million ; $4.8 million,"Calculation: (1,234+1,234)/2
+Answer: 1,234 thousand","1,234 thousand",0,0,0.0,0,1,,,4173.19,0.0,166,30,cuda,nf4
+tatqa-96035218ccce75bb4fb942af908495bd,tatqa,test,0,multi-span,table,mistral7b,qlora,nodocs,42,What are the respective basic weighted average common shares outstanding in 2018 and 2019?,"141,969,666 ; 142,571,361","Answer: 1,234 thousand ; 1,234 thousand","1,234 thousand ; 1,234 thousand",0,0,0.0,0,1,,,3024.93,0.0,161,18,cuda,nf4
+tatqa-494513cc45af080b70baeba21591262e,tatqa,test,0,span,text,mistral7b,qlora,nodocs,42,What do the provisions for uncertain tax positions relate to?,business in territories outside of the US,Answer: The provisions for uncertain tax positions relate to the company's potential tax liabilities that are uncertain or subject to uncertainty.,The provisions for uncertain tax positions relate to the company's potential tax liabilities that are uncertain or subject to uncertainty.,0,0,0.0,0,1,,,3844.89,0.0,148,27,cuda,nf4
+tatqa-9c8fbe582922dbf8c8ec6711e3447b02,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,What was the average Cash flow from investing activities between 2018 and 2019?,"-1,331,372 thousand","Calculation: (1,234+1,234)/2
+Answer: 1,234 thousand","1,234 thousand",0,0,0.0,0,1,,,4114.62,0.0,159,30,cuda,nf4
+tatqa-4ee1b909259e6258b8cb63e219f3dd1c,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,What is the value of revenue from professional services as a percentage of the 2018 total revenue?,6.63%,"Calculation: 1,234/10,000
+Answer: 12.34%",12.34%,0,0,0.0,0,1,,,3946.91,0.0,159,29,cuda,nf4
+tatqa-b14936742439bf08e0408b9fb10b922e,tatqa,test,0,count,table-text,mistral7b,qlora,nodocs,42,"How many years did the Accumulated benefit obligation exceed $3,000 thousand?",1,"Calculation: 2015:3,000>2,999 ; 2016:3,000>2,999 ; 2017:3,000>2,999
+Answer: 2015 ; 2016 ; 2017",2015 ; 2016 ; 2017,0,0,0.0,0,1,,,8581.54,0.0,156,79,cuda,nf4
+tatqa-25d2e81cd8e2d8ab81c5796d6e89c4ec,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,What was the change in gross profit between May 2019 and August 2019?,"51,279 thousand","Calculation: (1,234,567 - 1,123,456)
+Answer: 111,111","111,111",0,0,0.0,0,1,,,4760.08,0.0,159,39,cuda,nf4
+tatqa-857a9562bbcd7d2169b9a953ee23c574,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,What is the Restructuring charges for 2019 expressed as a percentage of Total charges for the year?,41%,"Calculation: (Restructuring charges)/(Total charges)
+Answer: 12.5%",12.5%,0,0,0.0,0,1,,,3458.9,0.0,161,25,cuda,nf4
+tatqa-b2d5e2512b0988dd701480c344fb82bf,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,What is the change in Item reclassified from freehold investment property from 2018 to 2019?,"-2,332 thousand","Calculation: 1,234-1,000
+Answer: 234 thousand",234 thousand,0,0,0.0,0,1,,,3542.55,0.0,164,26,cuda,nf4
+tatqa-43558cd1737dec09eeca71cf7bed5ff2,tatqa,test,0,span,table-text,mistral7b,qlora,nodocs,42,What type of granted shares was excluded from the table?,"Shares granted whose related performance conditions were not finalized at December 31, 2019",Answer: Options,Options,0,0,0.0,0,1,,,1517.62,0.0,148,4,cuda,nf4
+tatqa-1fa631df29dac2e9313cf6877ad47c6c,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,What is the average Total charges for the 3 years?,64.23 million,"Calculation: (123.4+124.5+125.6)/3
+Answer: 124.43%",124.43%,0,0,0.0,0,1,,,4519.64,0.0,149,37,cuda,nf4
+tatqa-3bff27eb2944cb199f863d6eb50bb06d,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,What is the 2019 actual group operating profit expressed as a ratio of the 2019 target group operating profit?,1.03,"Calculation: 1,234/1,500
+Answer: 0.823",0.823,0,0,0.0,0,1,,,3624.53,0.0,165,27,cuda,nf4
+tatqa-dce800aa37e3a6c06890c0e53b831172,tatqa,test,0,multi-span,table,mistral7b,qlora,nodocs,42,What are the plans under remuneration measure?,Annual Incentive Plan ; Performance Share Plan,"Answer: The plans under remuneration measure include:
+1. Increase in the number of shares that can be purchased under the share purchase plan
+2. Increase in the number of shares that can be purchased under the share purchase plan for directors
+3. Increase in the number of shares that can be purchased under the share purchase plan for employees
+4. Increase in the number of shares that can be purchased under the share purchase plan for employees who are",The plans under remuneration measure include:,0,0,0.0,0,1,,,9957.04,0.0,148,96,cuda,nf4
+tatqa-1f2a210cb1aea186cb4cfe4e515200ca,tatqa,test,0,span,text,mistral7b,qlora,nodocs,42,How much did Selling and administrative expenses increased in 2019 compared to 2018?,$124.2 million,"Calculation: 1,234,567-1,123,456
+Answer: 111,111","111,111",0,0,0.0,0,1,,,4579.25,0.0,160,37,cuda,nf4
+tatqa-b1636f21bd8c658c3844bc1210c3977a,tatqa,test,0,arithmetic,table-text,mistral7b,qlora,nodocs,42,What was the percentage change in the total amortization of purchased intangible assets between 2018 and 2019?,-10.1%,"Calculation: (1,234,567-1,200,000)/1,200,000
+Answer: 4.56%",4.56%,0,0,0.0,0,1,,,5354.32,0.0,167,45,cuda,nf4
+tatqa-9aab1000cf8d1e140d933d7f1b5226c0,tatqa,test,0,span,text,mistral7b,qlora,nodocs,42,How much did the cost of revenues decreased by?,$4.3 million,"Calculation: 1,234 - 1,200
+Answer: 34 million",34 million,0,0,0.0,0,1,,,3583.35,0.0,149,26,cuda,nf4
+tatqa-28261ac496f91f891d967a13c5f69a55,tatqa,test,0,arithmetic,table,mistral7b,qlora,nodocs,42,What is the average Long-term debt?,"44,853.5 million","Calculation: (1,234+1,234)/2
+Answer: 1,234 thousand","1,234 thousand",0,0,0.0,0,1,,,3955.44,0.0,146,30,cuda,nf4
+tatqa-f22feee8205c1f0c24fbf429d2d8a20e,tatqa,test,0,span,text,mistral7b,qlora,nodocs,42,"How much was the Total compensation expense related to performance-based, service-based, and market-based RSUs for the year ended December 31, 2019?",$69.8 million,"Answer: $1,234 thousand ; $1,234 thousand ; $1,234 thousand","$1,234 thousand ; $1,234 thousand ; $1,234 thousand",0,0,0.0,0,1,,,3637.66,0.0,176,26,cuda,nf4
