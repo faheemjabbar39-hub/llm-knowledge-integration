@@ -1,0 +1,21 @@
+{
+  "model": "llama8b",
+  "hf_id": "meta-llama/Llama-3.1-8B-Instruct",
+  "strategy": "qlora",
+  "tag": "",
+  "split": "test",
+  "device": "cuda",
+  "quant": "nf4",
+  "max_new_tokens": 96,
+  "uses_documents": true,
+  "top_k": 3,
+  "retriever": "dense",
+  "adapter": "adapters/llama8b_r16_s42",
+  "n_items_this_run": 504,
+  "wall_clock_s": 6690.8,
+  "peak_gpu_gb": 10.054,
+  "setup": {
+    "index_build_s": 18.28,
+    "qlora_train_s": 8818.3
+  }
+}
