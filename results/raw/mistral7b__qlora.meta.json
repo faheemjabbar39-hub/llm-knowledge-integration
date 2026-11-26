@@ -1,0 +1,21 @@
+{
+  "model": "mistral7b",
+  "hf_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "strategy": "qlora",
+  "tag": "",
+  "split": "test",
+  "device": "cuda",
+  "quant": "nf4",
+  "max_new_tokens": 96,
+  "uses_documents": true,
+  "top_k": 3,
+  "retriever": "dense",
+  "adapter": "adapters/mistral7b_r16_s42",
+  "n_items_this_run": 504,
+  "wall_clock_s": 8437.0,
+  "peak_gpu_gb": 10.027,
+  "setup": {
+    "index_build_s": 10.13,
+    "qlora_train_s": 10495.6
+  }
+}
