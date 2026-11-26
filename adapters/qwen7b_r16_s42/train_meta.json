@@ -1,0 +1,19 @@
+{
+  "model": "qwen7b",
+  "hf_id": "Qwen/Qwen2.5-7B-Instruct",
+  "rank": 16,
+  "alpha": 32,
+  "seed": 42,
+  "examples": {
+    "total": 1202,
+    "kept": 1202,
+    "fewer_docs": 43,
+    "skipped_too_long": 0
+  },
+  "steps": 1202,
+  "train_s": 8231.1,
+  "loss_start": 0.6456,
+  "loss_end": 0.1842,
+  "precision": "float16",
+  "peak_gpu_gb": 10.731
+}
