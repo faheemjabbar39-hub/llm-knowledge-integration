@@ -1,0 +1,19 @@
+{
+  "model": "mistral7b",
+  "hf_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "rank": 16,
+  "alpha": 32,
+  "seed": 42,
+  "examples": {
+    "total": 1202,
+    "kept": 1202,
+    "fewer_docs": 81,
+    "skipped_too_long": 0
+  },
+  "steps": 1202,
+  "train_s": 10495.6,
+  "loss_start": 0.4876,
+  "loss_end": 0.1744,
+  "precision": "float16",
+  "peak_gpu_gb": 10.171
+}
