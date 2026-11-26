@@ -1,0 +1,19 @@
+{
+  "model": "llama8b",
+  "hf_id": "meta-llama/Llama-3.1-8B-Instruct",
+  "rank": 16,
+  "alpha": 32,
+  "seed": 42,
+  "examples": {
+    "total": 1202,
+    "kept": 1202,
+    "fewer_docs": 21,
+    "skipped_too_long": 0
+  },
+  "steps": 1202,
+  "train_s": 8818.3,
+  "loss_start": 0.5401,
+  "loss_end": 0.2032,
+  "precision": "float16",
+  "peak_gpu_gb": 11.613
+}
